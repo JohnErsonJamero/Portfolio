@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Form Elements</title>
+    </head>
+    <body>
+        <center>
+            <h1>HTML Form Elements</h1>
+            
+            <form>
+                <table border="1" width="70%" cellpadding="8" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Form Elements</th>
+                            <th>Sample Output</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Text Inputs -->
+                        <tr>
+                            <td>Text Input:</td>
+                            <td><input type="text" placeholder="Enter text"></td>
+                        </tr>
+                        <tr>
+                            <td>Password Input:</td>
+                            <td><input type="password" placeholder="Enter password"></td>
+                        </tr>
+                        <tr>
+                            <td>Email Input:</td>
+                            <td><input type="email" placeholder="email@example.com"></td>
+                        </tr>
+                        <tr>
+                            <td>URL Input:</td>
+                            <td><input type="url" placeholder="https://example.com"></td>
+                        </tr>
+                        <tr>
+                            <td>Telephone Input:</td>
+                            <td><input type="tel" placeholder="123-456-7890"></td>
+                        </tr>
+                        <tr>
+                            <td>Search Input:</td>
+                            <td><input type="search" placeholder="Search..."></td>
+                        </tr>
+                        <tr>
+                            <td>Textarea (Multi-line Text):</td>
+                            <td><textarea rows="3" cols="25" placeholder="Enter text..."></textarea></td>
+                        </tr>
+
+                        <!-- Numerical & Range -->
+                        <tr>
+                            <td>Number Input:</td>
+                            <td><input type="number" min="1" max="100"></td>
+                        </tr>
+                        <tr>
+                            <td>Range Input (Slider):</td>
+                            <td><input type="range" min="0" max="100"></td>
+                        </tr>
+
+                        <!-- Date & Time Controls -->
+                        <tr>
+                            <td>Date Input:</td>
+                            <td><input type="date"></td>
+                        </tr>
+                        <tr>
+                            <td>Time Input:</td>
+                            <td><input type="time"></td>
+                        </tr>
+                        <tr>
+                            <td>Date & Time Local Input:</td>
+                            <td><input type="datetime-local"></td>
+                        </tr>
+                        <tr>
+                            <td>Month Input:</td>
+                            <td><input type="month"></td>
+                        </tr>
+                        <tr>
+                            <td>Week Input:</td>
+                            <td><input type="week"></td>
+                        </tr>
+
+                        <!-- Selection Controls -->
+                        <tr>
+                            <td>Single Checkbox:</td>
+                            <td><input type="checkbox"> I agree to the terms and conditions</td>
+                        </tr>
+                        <tr>
+                            <td>Hobbies (Multiple Checkboxes):</td>
+                            <td>
+                                <input type="checkbox" name="hobby" value="Reading"> Reading<br>
+                                <input type="checkbox" name="hobby" value="Sports"> Sports<br>
+                                <input type="checkbox" name="hobby" value="Coding"> Coding
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Contact Preference (Radio Buttons):</td>
+                            <td>
+                                <input type="radio" name="contact" value="Email"> Email<br>
+                                <input type="radio" name="contact" value="Phone"> Phone<br>
+                                <input type="radio" name="contact" value="Mail"> Mail
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Select Dropdown:</td>
+                            <td>
+                                <select>
+                                    <option value="">-- Select a Country --</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="FR">France</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Multiple Select Box:</td>
+                            <td>
+                                <select multiple size="4">
+                                    <option value="html5">HTML5</option>
+                                    <option value="css3">CSS3</option>
+                                    <option value="js">JavaScript</option>
+                                    <option value="sql">SQL</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Datalist Input (Autocompletion):</td>
+                            <td>
+                                <input list="browsers" name="browser" placeholder="Type to search...">
+                                <datalist id="browsers">
+                                    <option value="Chrome">
+                                    <option value="Firefox">
+                                    <option value="Safari">
+                                    <option value="Edge">
+                                </datalist>
+                            </td>
+                        </tr>
+
+                        <!-- File & Media Inputs -->
+                        <tr>
+                            <td>File Input (Single/Multiple):</td>
+                            <td><input type="file" multiple></td>
+                        </tr>
+                        <tr>
+                            <td>Color Picker Input:</td>
+                            <td><input type="color" value="#ff0000"></td>
+                        </tr>
+
+                        <!-- Special, Display & Hidden Elements -->
+                        <tr>
+                            <td>Calculation Element:</td>
+                            <td><input type="number" value="10"> + <input type="number" value="20"> = 30</td>
+                        </tr>
+                        <tr>
+                            <td>Meter Element (Disk Usage):</td>
+                            <td><meter value="0.75">75%</meter> 75%</td>
+                        </tr>
+                        <tr>
+                            <td>Progress Element:</td>
+                            <td><progress value="0.6">60%</progress> 60%</td>
+                        </tr>
+
+                        <!-- Buttons & Actions -->
+                        <tr>
+                            <td>Submit Input Button:</td>
+                            <td><input type="submit" value="Submit"></td>
+                        </tr>
+                        <tr>
+                            <td>Reset Input Button:</td>
+                            <td><input type="reset" value="Reset"></td>
+                        </tr>
+                        <tr>
+                            <td>Plain Input Button:</td>
+                            <td><input type="button" value="Button"></td>
+                        </tr>
+                        <tr>
+                            <td>Image Submit Button:</td>
+                            <td>
+                                <input type="image" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='26'><text x='0' y='18' font-size='14' font-family='Arial' fill='blue'>Submit</text></svg>" alt="Submit">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Submit Button Tag:</td>
+                            <td><button type="submit">Submit</button></td>
+                        </tr>
+                        <tr>
+                            <td>Reset Button Tag:</td>
+                            <td><button type="reset">Reset</button></td>
+                        </tr>
+                        <tr>
+                            <td>Custom Button Tag:</td>
+                            <td><button type="button">Custom</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div>
+                    Made by John Erson E. Jamero
+                </div>
+            </form>
+        </center>
+    </body>
+</html>
