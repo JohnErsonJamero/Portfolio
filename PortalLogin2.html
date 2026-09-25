@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova Solutions - Employee Portal Login</title>
+    
+    <style>
+        /* Styles the entire page background and centers the layout */
+
+        body {
+            background-color: #ffbbde;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; 
+            padding-top: 60px;       
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Styles the main login table container with borders and shadow */
+        table {
+            background-color: #ffc6c8;
+            border: 2px solid #000000;
+            border-collapse: collapse;
+            width: 380px;
+            box-shadow: 0 4px 6px rgba(18, 9, 9, 0.1);
+        }
+
+        /* Styles the table header background color */
+        thead {
+            background-color: #f9ffc6;
+            color: #000000;
+            text-align: center;
+        }
+
+        /* Styles the portal heading inside the header */
+        h2 {
+            margin: 0;
+            padding: 15px;
+        }
+
+        /* Styles the table body cells with padding and text styling */
+        tbody td {
+            padding: 12px;
+            color: #1e293b;
+            font-weight: bold;
+        }
+
+        /* Styles text and password input fields */
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            background-color: #f0f4f8;
+            border: 1px solid #64748b;
+            border-radius: 4px;
+        }
+
+        /* Styles the footer table cells for alignment and metadata text */
+        tfoot td {
+            padding: 10px;
+            text-align: center;
+            background-color: #ffc6c8;
+            color: #010b1a;
+            font-size: 0.85em;
+        }
+
+        /* Styles the primary submit action button using a dark shade */
+        input[type="submit"] {
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 4px;
+            width: auto;
+            margin-right: 5px;
+        }
+
+        /* Styles the secondary reset action button using a medium tone */
+        input[type="reset"] {
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 4px;
+            width: auto;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main form element wrapping the structural table -->
+    <form action="#" method="POST">
+        
+        <!-- Centered table layout structured semantically -->
+        <table align="center">
+            
+            <!-- Table header containing the portal heading -->
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        <h2>Portal Login</h2>
+                    </th>
+                </tr>
+            </thead>
+
+            <!-- Table body containing form labels and inputs -->
+            <tbody>
+                <tr>
+                    <td><label for="username">Username:</label></td>
+                    <td><input type="text" id="username" name="username" placeholder="Enter Username"></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="password" id="password" name="password" placeholder="Enter Password"></td>
+                </tr>
+            </tbody>
+
+            <!-- Table footer containing action controls and student credits -->
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Created by: John Erson E. Jamero - 2026 &amp; Section A
+                    </td>
+                </tr>
+            </tfoot>
+
+        </table>
+    </form>
+
+</body>
+</html>
