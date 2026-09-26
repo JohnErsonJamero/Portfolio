@@ -6,6 +6,7 @@
     <title>TechNova Solutions - Employee Portal Login</title>
     
     <style>
+
         /* Styles the entire page background and centers the layout */
         body {
             background-color: #ffbbde;
@@ -25,10 +26,11 @@
             flex-direction: column;
         }
 
-        /* Styles the landing page link to be outside and left-aligned */
+        /* Styles the landing page link to be outside and strictly left-aligned */
         .landing-link {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-align: left;
+            padding-left: 0;
         }
 
         .landing-link a {
@@ -70,7 +72,6 @@
         input {
             width: 100%;
             padding: 8px;
-            box-sizing: border-box;
             background-color: #f0f4f8;
             border: 1px solid #64748b;
             border-radius: 4px;
@@ -113,22 +114,14 @@
     </style>
 </head>
 <body>
-        
-    <!-- Main container wrapping the link and form to keep them aligned -->
-    <div class="page-container">
-        
-        <!-- Landing page link positioned outside and left-aligned -->
-        <div>
             <a href="JohnErson.html">LANDING PAGE</a>
-        </div>
+          <!-- Main form element wrapping the structural table -->
+    <form action="#" method="POST">
 
-        <!-- Main form element wrapping the structural table -->
-        <form action="#" method="POST">
+        <!-- Centered table layout structured semantically -->
+        <table align="center">
             
-            <!-- Table layout structured semantically -->
-            <table>
-                
-                <!-- Table header containing the portal heading -->
+            <!-- Table header containing the portal heading -->
                 <thead>
                     <tr>
                         <th colspan="2">
