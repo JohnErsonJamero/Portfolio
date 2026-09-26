@@ -17,13 +17,32 @@
             min-height: 100vh;
             margin: 0;
         }
+
+        /* Wrapper to keep the landing page link and table aligned together */
+        .page-container {
+            width: 380px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Styles the landing page link to be outside and left-aligned */
+        .landing-link {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .landing-link a {
+            color: #0000ee;
+            font-weight: bold;
+            text-decoration: underline;
+        }
             
         /* Styles the main login table container with borders and shadow */
         table {
             background-color: #ffc6c8;
             border: 2px solid #000000;
             border-collapse: collapse;
-            width: 380px;
+            width: 100%;
             box-shadow: 0 4px 6px rgba(18, 9, 9, 0.1);
         }
 
@@ -95,54 +114,58 @@
 </head>
 <body>
         
-    <!-- Main form element wrapping the structural table -->
-    <form action="#" method="POST">
+    <!-- Main container wrapping the link and form to keep them aligned -->
+    <div class="page-container">
         
-        <!-- Centered table layout structured semantically -->
-        <table align="center">
+        <!-- Landing page link positioned outside and left-aligned -->
+        <div class="landing-link">
+            <a href="JohnErson.html">LANDING PAGE</a>
+        </div>
+
+        <!-- Main form element wrapping the structural table -->
+        <form action="#" method="POST">
             
-            <!-- Table header containing the portal heading -->
-            <thead>
-                <tr>
-                    <th colspan="2">
-                        <h2>Portal Login</h2>
-                    </th>
-                </tr>
-            </thead>
+            <!-- Table layout structured semantically -->
+            <table>
+                
+                <!-- Table header containing the portal heading -->
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            <h2>Portal Login</h2>
+                        </th>
+                    </tr>
+                </thead>
 
-            <!-- Table body containing form labels and inputs -->
-            <tbody>
-                <tr>
-                    <td><label for="username">Username:</label></td>
-                    <td><input type="text" id="username" name="username" placeholder="Enter Username"></td>
-                </tr>
-                <tr>
-                    <td><label for="password">Password:</label></td>
-                    <td><input type="password" id="password" name="password" placeholder="Enter Password"></td>
-                </tr>
-            </tbody>
+                <!-- Table body containing form labels and inputs -->
+                <tbody>
+                    <tr>
+                        <td><label for="username">Username:</label></td>
+                        <td><input type="text" id="username" name="username" placeholder="Enter Username"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td><input type="password" id="password" name="password" placeholder="Enter Password"></td>
+                    </tr>
+                </tbody>
 
-            <!-- Table footer containing action controls and student credits -->
-            <tfoot>
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" value="Submit">
-                        <input type="reset" value="Reset">
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        Created by: John Erson E. Jamero - 2026 &amp; 12 - Cooper
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: left;">
-                        <a href="JohnErson.html">LANDING PAGE</a>
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
-    </form>
+                <!-- Table footer containing action controls and student credits -->
+                <tfoot>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="Submit">
+                            <input type="reset" value="Reset">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            Created by: John Erson E. Jamero - 2026 &amp; 12 - Cooper
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </form>
+    </div>
         
 </body>
 </html>
