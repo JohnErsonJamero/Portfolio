@@ -119,11 +119,10 @@
       font-size: 1rem;
       margin-bottom: 12px;
     }
-  </style>
+    </style>
 </head>
 <body>
-
-  <form id="discountForm">
+  <form>
     <div id="container">
       <h3>Discount Calculator</h3>
 
@@ -134,49 +133,52 @@
       <input type="number" id="discount" step="0.01" min="0" max="100">
 
       <label for="price-after">Price after discount</label>
-      <output id="priceAfter">&#8369; 0.00</output>
+      <output id="priceAfter">&#8369;0.00</output>
 
       <label for="saved-amount">Saved amount</label>
-      <output id="savedAmount">&#8369; 0.00</output>
+      <output id="savedAmount">&#8369;0.00</output>
 
       <input type="button" id="btnCompute" value="Compute">
-      <input type="reset" id="btnReset" value="Reset">
+      <input type="button" id="btnReset" value="Reset" style="background-color: #64748b; margin-top: 4px;">
 
-      <label>Programmed by: John Erson E. Jamero, 2026 and 12 - Cooper</label>
+      <label class="footer-label">Programmed by: Julius Bergado 12-Cooper</label>
     </div>
   </form>
 
   <script>
-    // Access DOM Elements
+    // DOM Element References
     const thePrice = document.getElementById("price");
     const theDiscount = document.getElementById("discount");
+    const priceAfterOutput = document.getElementById("priceAfter");
+    const savedAmountOutput = document.getElementById("savedAmount");
     const theButton = document.getElementById("btnCompute");
-    const priceAfterOut = document.getElementById("priceAfter");
-    const savedAmountOut = document.getElementById("savedAmount");
-    const btnReset = document.getElementById("btnReset");
+    const resetButton = document.getElementById("btnReset");
 
     // Calculation Function
     function computeDiscount() {
-      const price = parseFloat(thePrice.value) || 0;
-      const discountPercent = parseFloat(theDiscount.value) || 0;
+      const priceVal = parseFloat(thePrice.value) || 0;
+      const discountVal = parseFloat(theDiscount.value) || 0;
 
-      const saved = price * (discountPercent / 100);
-      const finalPrice = price - saved;
+      // Calculate saved amount and new total price
+      const savedAmount = priceVal * (discountVal / 100);
+      const priceAfter = priceVal - savedAmount;
 
-      // Update output elements formatted with Peso sign
-      savedAmountOut.innerHTML = "&#8369;" + saved.toFixed(4);
-      priceAfterOut.innerHTML = "&#8369;" + finalPrice.toFixed(4);
+      // Display outputs
+      savedAmountOutput.innerHTML = "&#8369;" + savedAmount;
+      priceAfterOutput.innerHTML = "&#8369;" + priceAfter;
+    }
+
+    // Reset Function
+    function resetForm() {
+      thePrice.value = "";
+      theDiscount.value = "";
+      priceAfterOutput.innerHTML = "&#8369;0.00";
+      savedAmountOutput.innerHTML = "&#8369;0.00";
     }
 
     // Event Listeners
     theButton.addEventListener('click', computeDiscount);
-
-    // Reset handler to clear output fields back to default
-    btnReset.addEventListener('click', function() {
-      priceAfterOut.innerHTML = "&#8369; 0.00";
-      savedAmountOut.innerHTML = "&#8369; 0.00";
-    });
+    resetButton.addEventListener('click', resetForm);
   </script>
-
 </body>
 </html>
