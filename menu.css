@@ -1,0 +1,56 @@
+
+.nav-link.active {
+ background-color: #f8ffc6; /* Primary Navy */
+ width: 100%;
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.nav-list {
+ display: flex; /* Aligns items side-by-side horizontally */
+ flex-direction: row; /* Sets main axis left-to-right */
+ justify-content: flex-start; /* Packs items toward start of menu */
+ align-items: center; /* Centers items vertically */
+ list-style-type: none; /* Removes default list bullet points */
+ margin: 0; /* Clears browser default margins */
+ padding: 0; /* Clears browser default
+
+ .nav-link {
+ display: block; /* Expands clickable box to fill padding */
+ padding: 14px 20px; /* Breathing room inside target box */
+ color: #ffc5de; /* High-contrast text color */
+ text-decoration: none; /* Removes standard underline */
+ font-family: 'Segoe UI', sans-serif;
+ font-size: 15px;
+ font-weight: 600;
+ transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 1. Unvisited default link state */
+.nav-link:link {
+ color: #FFFFFF;
+}
+
+/* 2. Visited link state */
+.nav-link:visited {
+ color: #E0E0E0;
+}
+/* 3. Mouse hover state */
+.nav-link:hover {
+ background-color: #005A9C;
+ color: #FFFFFF;
+}
+/* 4. Keyboard focus state (Accessibility / WCAG compliance) */
+.nav-link:focus {
+ outline: 3px solid #FFC107;
+ outline-offset: -3px;
+ background-color: #004080;
+}
+/* 5. Active click-press state */
+.nav-link:active {
+ background-color: #002B55;
+ transform: translateY(1px);
+}
+/* 6. Current page highlight class */
+.nav-link.active {
+ background-color: #005A9C;
+ border-bottom: 4px solid #FFC107;
+}
