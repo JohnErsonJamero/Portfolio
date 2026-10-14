@@ -1,61 +1,60 @@
-.nav-link.active {
- background-color: #f8ffc6;
- width: 100%;
- box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.navbar {
+  background-color: #111b27; /* Dark background for the whole header bar */
+  width: 100%;
 }
 
 .nav-list {
- display: flex; /* Pahigang ayos ng menu */
- flex-direction: row; /* Kaliwa pakanan */
- justify-content: flex-start; /* Simula sa kaliwa */
- align-items: center; /* Pantay sa gitna */
- list-style-type: none; /* Tanggal bullet points */
- margin: 0; /* Walang margin */
- padding: 0; /* Walang padding */
+  display: flex; /* Pahigang ayos ng menu */
+  flex-direction: row; /* Kaliwa pakanan */
+  justify-content: flex-start; /* Simula sa kaliwa */
+  align-items: center; /* Pantay sa gitna */
+  list-style-type: none; /* Tanggal bullet points */
+  margin: 0; /* Walang margin */
+  padding: 0; /* Walang padding */
 }
 
 .nav-link {
- display: block; /* Gawing clickable box */
- padding: 14px 20px; /* Espasyo sa loob */
- color: #ffc5de; /* Kulay ng text */
- text-decoration: none; /* Tanggal underline */
- font-family: 'Segoe UI', sans-serif;
- font-size: 15px;
- font-weight: 600;
- transition: background-color 0.3s ease, color 0.3s ease; /* Smooth na pag-iba ng kulay */
+  display: block; /* Gawing clickable box */
+  padding: 14px 20px; /* Espasyo sa loob */
+  color: #ffc5de; /* Kulay ng text */
+  text-decoration: none; /* Tanggal underline */
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth na pag-iba ng kulay */
 }
 
 /* 1. Hindi pa nabibisita */
 .nav-link:link {
- color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 /* 2. Nabisita na */
 .nav-link:visited {
- color: #E0E0E0;
+  color: #E0E0E0;
 }
 
 /* 3. Kapag itinapat ang mouse */
 .nav-link:hover {
- background-color: #005A9C;
- color: #FFFFFF;
+  background-color: #005A9C;
+  color: #FFFFFF;
 }
 
 /* 4. Kapag tinututukan gamit ang keyboard */
 .nav-link:focus {
- outline: 3px solid #FFC107;
- outline-offset: -3px;
- background-color: #004080;
+  outline: 3px solid #FFC107;
+  outline-offset: -3px;
+  background-color: #004080;
 }
 
 /* 5. Habang pinipindot */
 .nav-link:active {
- background-color: #002B55;
- transform: translateY(1px);
+  background-color: #002B55;
+  transform: translateY(1px);
 }
 
 /* 6. Kasalukuyang pahina */
 .nav-link.active {
- background-color: #005A9C;
- border-bottom: 4px solid #FFC107;
+  background-color: #005A9C;
+  border-bottom: 4px solid #FFC107;
 }
