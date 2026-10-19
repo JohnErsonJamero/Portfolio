@@ -1,0 +1,66 @@
+[
+    {
+    "lrn": "10794567002", 
+    "name": "Prince Luscian Paglinawan",
+    "age": 17,
+    "section": "Cooper",
+    "image": "images/prince.jpg"
+    },
+    
+    {
+    "lrn": "10794567003",
+    "name": "Kiane Carlo Bauto",
+    "age": 17,
+    "section": "Cooper",
+    "image": "images/bauts.jpg"
+    },
+    
+    {
+
+    "lrn": "10794567004", 
+    "name": "Julius Caesar Bergado",
+    "age": 17,
+    "section": "Cooper",
+    "image": "images/julius.jpg"
+    },
+
+    {
+    "lrn": "10794567005", 
+    "name": "Dale Danielle Peralta",
+    "age": 17,
+    "section": "Cooper",
+    "image": "images/peralta.jpg"
+    },
+
+    {
+    "lrn": "10794567006", 
+    "name": "Chelsea Mae Tabarnilla",
+    "age": 18,
+    "section": "Cooper",
+    "image": "images/tabarnilla.jpg"
+    },
+
+    {
+    "lrn": "10794567007", 
+    "name": "Christof Soriano",
+    "age": 17,
+    "section": "Cooper",
+    "image": "images/soriano.jpg"
+    },
+
+    {
+    "lrn": "10794567008", 
+    "name": "Vince Zyvon Florano",
+    "age": 17,
+    "section": "Cooper",
+    "image": "images/zyvon.jpg"
+    },
+
+    {
+    "lrn": "10794567009", 
+    "name": "Kristhyl Anne Morales",
+    "age": 17,
+    "section": "Cooper",
+    "image": "images/morales.jpg"
+    }
+]
