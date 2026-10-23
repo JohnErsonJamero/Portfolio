@@ -7,86 +7,90 @@
 
 body {
     background-color: #f5f5f5; /* Kulay ng background ng buong page */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Uri ng font */
-    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Uri ng font na gagamitin */
+    min-height: 100vh; /* Minimum na taas ng page para sakop ang buong screen */
 }
 
 /* 1. Main Navbar Header Container */
 .navbar {
     background-color: #111b27; /* Maitim na background sa taas ng page */
-    width: 100%;
+    width: 100%; /* Buong lapad ng screen */
 }
 
 /* 2. Navigation List (Flexbox Layout) */
 .nav-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    display: flex; /* Pahigang ayos ng menu */
+    flex-direction: row; /* Kaliwa pakanan ang posisyon */
+    justify-content: flex-start; /* Nagsisimula sa kaliwang bahagi */
+    align-items: center; /* Pantay sa gitna nang patayo */
+    list-style-type: none; /* Tinatanggal ang mga bullet points */
+    margin: 0; /* Walang margin */
+    padding: 0; /* Walang padding */
 }
 
 /* 3. Individual Nav Links */
 .nav-link {
-    display: block;
-    padding: 14px 20px;
-    color: #ffc5de;
-    text-decoration: none;
+    display: block; /* Ginagawang clickable na hugis box */
+    padding: 14px 20px; /* Espasyo sa loob ng link button */
+    color: #ffc5de; /* Kulay ng text */
+    text-decoration: none; /* Tinatanggal ang underline sa text */
     font-family: 'Segoe UI', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 15px; /* Laki ng text sa menu */
+    font-weight: 600; /* Kapal ng text */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Swabe o smooth na pagbago ng kulay */
 }
 
+/* Hindi pa nabibisita na link */
 .nav-link:link {
     color: #FFFFFF;
 }
 
+/* Nabisita na na link */
 .nav-link:visited {
     color: #E0E0E0;
 }
 
+/* Kapag itinapat ang mouse o aktibo ang kasalukuyang page */
 .nav-link:hover, .nav-link.active {
-    background-color: #005A9C;
+    background-color: #005A9C; /* Nag-iiba ang background kapag itinapat ang mouse */
     color: #FFFFFF;
 }
 
+/* Kapag tinututukan gamit ang keyboard tab */
 .nav-link:focus {
     outline: 3px solid #FFC107;
 }
 
 /* 4. Grid Container Styles - Para sa layout ng portfolio items */
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 na pantay-pantay na kolum */
-    gap: 1.2rem; /* Espasyo sa pagitan ng bawat box */
-    padding: 2.5rem;
+    display: grid; /* Ginagawang grid format ang layout */
+    min-height: 400px; /* Minimum na taas ng grid container */
+    grid-template-columns: repeat(4, 1fr); /* Hina-hati sa 4 na pantay-pantay na kolum */
+    grid-template-rows: repeat(3, 1fr); /* Hina-hati sa 3 pantay na hanay o row */
+    gap: 1rem; /* Patlang o espasyo sa pagitan ng bawat box */
+    padding: 2rem; /* Paligid na espasyo sa loob ng container */
 }
 
-/* Individual Grid Boxes (Links) - Transparent background na may border outline */
-a.box {
-    background-color: transparent; /* Transparent background para malinis tingnan */
-    border: 2px solid #1b2a4a; /* Outline/Border ng box na nakatugma sa kulay ng navbar */
-    color: #1b2a4a !important; /* Maitim na text color para malinaw na mabasa */
-    font-size: 0.9rem; /* Mas maliit na laki ng font ayon sa utos ni ma'am */
-    font-weight: 700; /* Bold text para litaw at madaling basahin */
-    height: 55px; /* Manipis at compact na taas katulad ng sa reference photo */
+/* Individual Grid Boxes */
+.box {
+    background-color: #1b2a4a; /* Kulay ng box na bagay sa navy blue navbar */
+    color: #ffc5de; /* Kulay ng text sa loob ng box */
+    font-size: 0.95rem; /* Mas maliit na laki ng font para kasya ang text */
+    font-weight: 600; /* Kapal ng font */
+    padding: 1rem; /* Espasyo sa loob ng box */
     text-decoration: none; /* Tinatanggal ang underline ng hyperlink */
-    display: flex;
-    align-items: center; /* Ise-center ang text nang patayo */
-    justify-content: center; /* Ise-center ang text nang pahiga */
-    text-align: center;
-    padding: 0.5rem 1rem;
-    border-radius: 6px; /* May kaunting border-radius para bilugan ang mga kanto */
-    transition: all 0.2s ease-in-out; /* Smooth hover transition effect */
+    display: flex; /* Ginagamit para madaling mai-center ang text */
+    align-items: center; /* Ise-center ang text nang patayo (vertical) */
+    justify-content: center; /* Ise-center ang text nang pahiga (horizontal) */
+    text-align: center; /* Gitnang ayos ng text */
+    border-radius: 8px; /* Pabilog na kanto ng mga boxes */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Bahagyang shadow sa ilalim ng box */
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Swabeng epekto kapag itinapat ang mouse */
 }
 
 /* Kapag itinapat ang mouse sa grid box */
-a.box:hover {
-    background-color: #005A9C; /* Nagiging kulay blue ang background kapag hovered */
-    border-color: #005A9C; /* Nag-iiba ang border color sa hover */
-    color: #ffffff !important; /* Nagiging puti ang text para sa contrast */
-    transform: translateY(-2px); /* Bahagyang umaangat kapag itinapat ang cursor */
+.box:hover {
+    background-color: #005A9C; /* Nagiging kulay blue kapag tinapatan ng mouse */
+    color: #ffffff; /* Nagiging puti ang text */
+    transform: translateY(-2px); /* Bahagyang umaangat ang box para magandang tingnan */
 }
