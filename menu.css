@@ -1,4 +1,4 @@
-//* Universal reset */
+/* Universal reset - Inaayos ang margin, padding, at box sizing sa lahat ng elements */
 * {
     margin: 0px;
     padding: 0px;
@@ -6,83 +6,74 @@
 }
 
 body {
-    background-color: #f5f5f5;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;
+    background-color: #f5f5f5; /* Kulay ng background ng buong page */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Uri ng font na gagamitin */
+    min-height: 100vh; /* Minimum na taas ng page para sakop ang buong screen */
 }
 
 /* 1. Main Navbar Header Container */
 .navbar {
-    background-color: #111b27; /* Dark background across the top */
-    width: 100%;
+    background-color: #111b27; /* Maitim na background sa taas ng page */
+    width: 100%; /* Buong lapad ng screen */
 }
 
 /* 2. Navigation List (Flexbox Layout) */
 .nav-list {
     display: flex; /* Pahigang ayos ng menu */
-    flex-direction: row; /* Kaliwa pakanan */
-    justify-content: flex-start; /* Simula sa kaliwa */
-    align-items: center; /* Pantay sa gitna */
-    list-style-type: none; /* Tanggal bullet points */
-    margin: 0;
-    padding: 0;
+    flex-direction: row; /* Kaliwa pakanan ang posisyon */
+    justify-content: flex-start; /* Nagsisimula sa kaliwang bahagi */
+    align-items: center; /* Pantay sa gitna nang patayo */
+    list-style-type: none; /* Tinatanggal ang mga bullet points */
+    margin: 0; /* Walang margin */
+    padding: 0; /* Walang padding */
 }
 
 /* 3. Individual Nav Links */
 .nav-link {
-    display: block; /* Gawing clickable box */
-    padding: 14px 20px; /* Espasyo sa loob */
+    display: block; /* Ginagawang clickable na hugis box */
+    padding: 14px 20px; /* Espasyo sa loob ng link button */
     color: #ffc5de; /* Kulay ng text */
-    text-decoration: none; /* Tanggal underline */
+    text-decoration: none; /* Tinatanggal ang underline sa text */
     font-family: 'Segoe UI', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 15px; /* Laki ng text sa menu */
+    font-weight: 600; /* Kapal ng text */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Swabe o smooth na pagbago ng kulay */
 }
 
-/* Navbar link states */
+/* Hindi pa nabibisita na link */
 .nav-link:link {
     color: #FFFFFF;
 }
 
+/* Nabisita na na link */
 .nav-link:visited {
     color: #E0E0E0;
 }
 
+/* Kapag itinapat ang mouse o aktibo ang kasalukuyang page */
 .nav-link:hover, .nav-link.active {
-    background-color: #005A9C;
+    background-color: #005A9C; /* Nag-iiba ang background kapag itinapat ang mouse */
     color: #FFFFFF;
 }
 
+/* Kapag tinututukan gamit ang keyboard tab */
 .nav-link:focus {
     outline: 3px solid #FFC107;
 }
 
-/* 4. Grid Styles */
+/* 4. Grid Container Styles - Para sa layout ng portfolio items */
 .grid-container {
-    display: grid;
-    min-height: 400px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 1rem;
-    padding: 1rem;
+    display: grid; /* Ginagawang grid format ang layout */
+    min-height: 400px; /* Minimum na taas ng grid container */
+    grid-template-columns: repeat(4, 1fr); /* Hina-hati sa 4 na pantay-pantay na kolum */
+    grid-template-rows: repeat(3, 1fr); /* Hina-hati sa 3 pantay na hanay o row */
+    gap: 1rem; /* Patlang o espasyo sa pagitan ng bawat box */
+    padding: 2rem; /* Paligid na espasyo sa loob ng container */
 }
 
+/* Individual Grid Boxes */
 .box {
-    background-color: #ff9ee2;
-    color: #f9f8f2;
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 1rem;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border-radius: 2px;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
+    background-color: #1b2a4a; /* Kulay ng box na bagay sa navy blue
 .box:hover {
     background-color: #f781d4;
     color: #ffffff;
