@@ -2,20 +2,135 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="loginScript.js" defer></script>
+    <a href="portfolio.html">Home</a>
+    <style>
+        /* Universal reset - Tinatanggal ang default margin at padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body - White background at nakatutok sa itaas (flex-start) */
+        body {
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px; /* Espasyo mula sa pinakataas ng screen */
+        }
+
+        /* Login Card Box - May pink na outer border */
+        .login-card {
+            background-color: #ffffff;
+            border: 2px solid #ff007f; /* Pink outer border */
+            width: 100%;
+            max-width: 380px;
+            padding: 30px;
+            position: relative;
+        }
+
+        /* Home link sa loob sa bandang itaas */
+        .home-link-top {
+            display: block;
+            text-align: left;
+            color: #87ceeb; /* Sky blue text */
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .home-link-top:hover {
+            text-decoration: underline;
+        }
+
+        /* Form Layout */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header Text - Sky Blue na kulay */
+        h2 {
+            color: #87ceeb; /* Sky blue text */
+            font-size: 2rem;
+            margin-bottom: 24px;
+            font-weight: bold;
+        }
+
+        /* Input Fields */
+        .inputField {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 14px;
+            border: 1px solid #757575;
+            font-size: 15px;
+            outline: none;
+            color: #333333;
+        }
+
+        .inputField::placeholder {
+            color: #757575;
+        }
+
+        .inputField:focus {
+            border-color: #ff007f;
+        }
+
+        /* Group para sa Submit at Reset buttons */
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        /* Buttons Style */
+        button {
+            background-color: #ff007f; /* Pink background para sa buttons */
+            color: #87ceeb; /* Sky blue text sa loob ng button */
+            border: none;
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        /* Error Message Text */
+        #errorMessage {
+            color: #ff0000;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
 </head>
-    <a href = "portfolio.html">Home</a>
 <body>
+
     <div>
         <form>
             <h2>Login</h2>
-            <input type="text" id="username" class="InputField" placeholder="Username" required>
-            <input type="password" id="password" class="InputField" placeholder="Password" required>
-            <button type="reset">Reset</button>
-            <button id="btnLogIn">Log In</button>
+            <input type="text" id="username" class="inputField" placeholder="Username">
+            <input type="password" id="password" class="inputField" placeholder="Password">
+            
+            <div class="button-group">
+                <button type="submit" id="btnLogIn">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+            
             <p id="errorMessage"></p>
         </form>
     </div>
+
 </body>
 </html>
