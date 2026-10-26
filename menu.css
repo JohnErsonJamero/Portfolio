@@ -31,7 +31,7 @@ body {
 /* 3. Individual Nav Links - Style ng bawat mismong link sa navbar */
 .nav-link {
     display: block; /* Ginagawang clickable ang buong espasyo ng box */
-    padding: 14px 20px; /* Espasyo sa loob ng button (itaas/ibaba at kaliwa/kanan) */
+    padding: 14px 20px; /* Espasyo sa loob ng button */
     color: #ffc5de; /* Kulay ng text */
     text-decoration: none; /* Tinatanggal ang salungguhit (underline) ng link */
     font-family: 'Segoe UI', sans-serif;
@@ -61,30 +61,31 @@ body {
     outline: 3px solid #FFC107; /* Dilaw na border outline para sa accessibility */
 }
 
-/* 4. Grid Styles - Container para sa mga portfolio items */
+/* 4. Grid Styles - Mas compact na container para sa mga portfolio items */
 .grid-container {
     display: grid; /* Ginagawang CSS Grid ang layout */
-    min-height: 400px; /* Minimum na taas ng container */
+    max-width: 1100px; /* Nilalagyan ng max-width para hindi masyadong kumalat */
+    margin: 2rem auto; /* Sinisentro ang buong grid sa gitna ng screen */
     grid-template-columns: repeat(4, 1fr); /* Hina-hati sa 4 na pantay-pantay na kolum */
-    grid-template-rows: repeat(3, 1fr); /* Hina-hati sa 3 na row */
+    grid-template-rows: repeat(3, 70px); /* Ginagawang mas mababa at compact ang bawat row (70px) */
     gap: 1rem; /* Espasyo sa pagitan ng bawat grid box */
-    padding: 2rem; /* Espasyo sa paligid ng buong grid */
+    padding: 0 1.5rem; /* Espasyo sa gilid para hindi dumikit sa screen edges */
 }
 
-/* Style para sa bawat kahon (box) sa loob ng grid */
+/* Style para sa bawat kahon (box) sa loob ng grid - ginawang mas maliit at propyonado */
 .box {
-    background-color: #1b2a4a; /* Bagong complementary navy background color */
+    background-color: #1b2a4a; /* Complementary navy background color */
     color: #ffc5de; /* Kulay ng text na nababagay sa navy theme */
-    font-size: 0.95rem; /* Mas maliit na sukat ng font para magkasya nang maayos */
+    font-size: 0.85rem; /* Mas maliit na sukat ng font para bumagay sa interface */
     font-weight: 600; /* Kapal ng text */
-    padding: 1rem; /* Espasyo sa loob ng kahon */
+    padding: 0.5rem 0.75rem; /* Mas kaunting padding para hindi masyadong mataba ang box */
     text-decoration: none; /* Tinatanggal ang underline dahil link ito */
     display: flex; /* Ginagawang flex para ma-center ang text sa loob */
     align-items: center; /* Pinapa-pantay ang text sa gitna nang patayo */
     justify-content: center; /* Pinapa-pantay ang text sa gitna nang pahiga */
     text-align: center; /* Naka-center ang text kapag higit sa isang linya */
-    border-radius: 8px; /* Nilalagyan ng kurbada ang mga sulok ng kahon */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Bahagyang shadow para magmukhang elevated */
+    border-radius: 6px; /* Medyo pino at mas maliit na kurbada sa sulok */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.055); /* Banayad na shadow */
     transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth na animation sa hover */
 }
 
