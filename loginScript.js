@@ -5,12 +5,12 @@ function compareLogin(event){
     const PASSWORD = "1234";
     const userName = document.getElementById("username").value;
     const passWord = document.getElementById("password").value;
-    const errorMessage = document.getElementById("errorMessage").value;
+    const errorMessage = document.getElementById("errorMessage");
     if(userName === USERNAME && passWord === PASSWORD){
-        alert("Welcome, HOORAY!");
+        alert("Nice, HOORAY!");
         window.location.href = "message.html";
     }else{
-        alert("Wrong");
+        alert("Wrong One, Woops!");
         errorMessage.textContent = "Invalid Username or Password!";
 
     }
