@@ -61,31 +61,31 @@ body {
     outline: 3px solid #FFC107; /* Dilaw na border outline para sa accessibility */
 }
 
-/* 4. Grid Styles - Mas compact na container para sa mga portfolio items */
+/* 4. Grid Styles - Compact na container para sa mga portfolio items */
 .grid-container {
     display: grid; /* Ginagawang CSS Grid ang layout */
     max-width: 1100px; /* Nilalagyan ng max-width para hindi masyadong kumalat */
     margin: 2rem auto; /* Sinisentro ang buong grid sa gitna ng screen */
     grid-template-columns: repeat(4, 1fr); /* Hina-hati sa 4 na pantay-pantay na kolum */
-    grid-template-rows: repeat(3, 70px); /* Ginagawang mas mababa at compact ang bawat row (70px) */
-    gap: 1rem; /* Espasyo sa pagitan ng bawat grid box */
+    grid-template-rows: repeat(3, 55px); /* Ginagawang mas payat/mababa ang bawat row (55px na lang) */
+    gap: 0.75rem; /* Mas maliit na espasyo sa pagitan ng mga grid box */
     padding: 0 1.5rem; /* Espasyo sa gilid para hindi dumikit sa screen edges */
 }
 
-/* Style para sa bawat kahon (box) sa loob ng grid - ginawang mas maliit at propyonado */
+/* Style para sa bawat kahon (box) sa loob ng grid - mas pinaliit ang padding */
 .box {
     background-color: #1b2a4a; /* Complementary navy background color */
     color: #ffc5de; /* Kulay ng text na nababagay sa navy theme */
-    font-size: 0.85rem; /* Mas maliit na sukat ng font para bumagay sa interface */
+    font-size: 0.8rem; /* Mas maliit na font para sakto sa mas payat na kahon */
     font-weight: 600; /* Kapal ng text */
-    padding: 0.5rem 0.75rem; /* Mas kaunting padding para hindi masyadong mataba ang box */
+    padding: 0.25rem 0.5rem; /* Pinaliit na padding sa loob ng kahon */
     text-decoration: none; /* Tinatanggal ang underline dahil link ito */
     display: flex; /* Ginagawang flex para ma-center ang text sa loob */
     align-items: center; /* Pinapa-pantay ang text sa gitna nang patayo */
     justify-content: center; /* Pinapa-pantay ang text sa gitna nang pahiga */
     text-align: center; /* Naka-center ang text kapag higit sa isang linya */
-    border-radius: 6px; /* Medyo pino at mas maliit na kurbada sa sulok */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.055); /* Banayad na shadow */
+    border-radius: 6px; /* Kurbada sa mga sulok */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Banayad na shadow */
     transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth na animation sa hover */
 }
 
@@ -95,3 +95,14 @@ body {
     color: #ffffff; /* Ginagawang puti ang text */
     transform: translateY(-2px); /* Bahagyang umaangat ang kahon kapag tinatapatan ng mouse */
 }
+/* .footer,.menu{
+    background:#c4bcab;
+}
+.footerStyle{
+    color:#584b3e;
+    font-weight:bold;
+}
+.footerText{
+    color:#ECD289;
+    font-weight:bold;
+} */
