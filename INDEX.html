@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORV Title Matching Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>ORV Title Matching Game</h1>
+    <p class="subtitle">Drag each character into their correct title box.</p>
+
+    <div class="score-display">
+      Score: <span id="score">0</span> / 100
+    </div>
+
+    <div class="box-container">
+      <h3>Characters</h3>
+      <div class="character-pool" id="characters-pool">
+        <div class="chip" draggable="true" id="char-1" data-match="mod-1">Kim Dokja</div>
+        <div class="chip" draggable="true" id="char-2" data-match="mod-2">Yoo Joonghyuk</div>
+        <div class="chip" draggable="true" id="char-3" data-match="mod-3">Han Sooyoung</div>
+        <div class="chip" draggable="true" id="char-4" data-match="mod-4">Yoo Sangah</div>
+        <div class="chip" draggable="true" id="char-5" data-match="mod-5">Lee Hyunsung</div>
+        <div class="chip" draggable="true" id="char-6" data-match="mod-6">Jung Heewon</div>
+        <div class="chip" draggable="true" id="char-7" data-match="mod-7">Lee Gilyoung</div>
+        <div class="chip" draggable="true" id="char-8" data-match="mod-8">Shin Yoosung</div>
+        <div class="chip" draggable="true" id="char-9" data-match="mod-9">Uriel</div>
+        <div class="chip" draggable="true" id="char-10" data-match="mod-10">Sun Wukong</div>
+      </div>
+    </div>
+
+    <div class="box-container">
+      <h3>Constellation Titles</h3>
+      <div class="drop-grid">
+        <div class="drop-card" data-id="mod-1">
+          <div class="card-label">Demon King of Salvation / Oldest Dream</div>
+        </div>
+        <div class="drop-card" data-id="mod-2">
+          <div class="card-label">Supreme King / Secretive Plotter</div>
+        </div>
+        <div class="drop-card" data-id="mod-3">
+          <div class="card-label">Director of False Endings</div>
+        </div>
+        <div class="drop-card" data-id="mod-4">
+          <div class="card-label">Incarnation of Moonlight & Thread</div>
+        </div>
+        <div class="drop-card" data-id="mod-5">
+          <div class="card-label">Master of Steel</div>
+        </div>
+        <div class="drop-card" data-id="mod-6">
+          <div class="card-label">Judge of Apocalypse</div>
+        </div>
+        <div class="drop-card" data-id="mod-7">
+          <div class="card-label">Ruler of Insects</div>
+        </div>
+        <div class="drop-card" data-id="mod-8">
+          <div class="card-label">Master of Chimera Beast</div>
+        </div>
+        <div class="drop-card" data-id="mod-9">
+          <div class="card-label">Demon-Like Judge of Fire</div>
+        </div>
+        <div class="drop-card" data-id="mod-10">
+          <div class="card-label">Great Sage, Heaven's Equal</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="reset-btn">Reset Game</button>
+      <a href="portfolio.html" class="home-btn">Home</a>
+    </div>
+  </div>
+
+  <div class="corner-avatar left-avatar">
+    <img src="kim-dokja.jpg" alt="Kim Dokja">
+    <span>Kim Dokja</span>
+  </div>
+
+  <div class="corner-avatar right-avatar">
+    <img src="yoo-joonghyuk.jpg" alt="Yoo Joonghyuk">
+    <span>Yoo Joonghyuk</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
