@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>My Photo Gallery</title>
+    <link rel="stylesheet" href="example.css">
+ <h1>My Photo Gallery</h1>
+ <div class="carousel" id="carousel">
+ <div class="slides">
+ <figure class="slide">
+ <img src="pic1.JPG" alt="Describe image 1">
+ <figcaption>Caption for image 1</figcaption>
+ </figure>
+ <figure class="slide">
+ <img src="pic2.JPG" alt="Describe image 2">
+ <figcaption>Caption for image 2</figcaption>
+ </figure>
+ <figure class="slide">
+ <img src="pic3.JPG" alt="Describe image 3">
+ <figcaption>Caption for image 3</figcaption>
+ </figure>
+ <figure class="slide">
+ <img src="pic4.JPG" alt="Describe image 4">
+ <figcaption>Caption for image 4</figcaption>
+ </figure>
+ <button class="nav prev" type="button" aria-label="Previous
+slide">&#10094;</button>
+D O T N E T T E C H N O L O G I E S | jQuery Image Carousel
+Page 14 of 18
+ <button class="nav next" type="button" aria-label="Next slide">&#10095;</button>
+ </div>
+ <div class="dots"></div>
+ </div>
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+ <script>
+ $(document).ready(function () {
+ // 1. Cache elements and settings
+ const $carousel = $("#carousel");
+ const $slides = $carousel.find(".slide");
+ const $dotsBox = $carousel.find(".dots");
+ const total = $slides.length;
+ const FADE_TIME = 500; // milliseconds
+ const DELAY = 4000; // time between automatic slides
+ let current = 0; // index of the visible slide
+ let timer = null; // holds the autoplay timer
+ // 2. Initial state: show only the first slide
+ $slides.hide().eq(0).show();
+ // 3. Create one dot per slide
+ $slides.each(function (i) {
+ $("<button>")
+ .attr({ type: "button", "aria-label": "Go to slide " + (i + 1) })
+ .addClass("dot" + (i === 0 ? " active" : ""))
+ .data("index", i)
+ .appendTo($dotsBox);
+ });
+ const $dots = $dotsBox.find(".dot");
+ // 4. Show a specific slide
+ function showSlide(index) {
+ if (index === current) return; // nothing to do
+ $slides.eq(current).stop(true, true).fadeOut(FADE_TIME);
+ $slides.eq(index).stop(true, true).fadeIn(FADE_TIME);
+ $dots.removeClass("active").eq(index).addClass("active");
+ current = index;
+ }
+ function nextSlide() { showSlide((current + 1) % total); }
+ function prevSlide() { showSlide((current - 1 + total) % total); }
+ // 5. Controls
+ $carousel.on("click", ".next", nextSlide);
+ $carousel.on("click", ".prev", prevSlide);
+ $dotsBox.on("click", ".dot", function () {
+ showSlide($(this).data("index"));
+ });
+ // 6. Autoplay (pauses on hover)
+ function startAutoplay() {
+ stopAutoplay(); // avoid duplicate timers
+ timer = setInterval(nextSlide, DELAY);
+ }
+ function stopAutoplay() {
+ clearInterval(timer);
+ }
+ $carousel.on("mouseenter", stopAutoplay)
+
+ .on("mouseleave", startAutoplay);
+ startAutoplay();
+ // 7. Keyboard control
+ $(document).on("keydown", function (event) {
+ if (event.key === "ArrowRight") {
+ nextSlide();
+ } else if (event.key === "ArrowLeft") {
+ prevSlide();
+ }
+ });
+ });
+ </script>
+</body>
+</html>
