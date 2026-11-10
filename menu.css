@@ -78,7 +78,7 @@ body {
     color: #fff7cd; /* Kulay ng text */
     font-size: 0.8rem; /* Mas maliit na font para sakto sa mas payat na kahon */
     font-weight: 600; /* Kapal ng text */
-    padding: 0.25rem 0.5rem; /* Pinaliit na padding sa loob ng kahon */
+    padding: 0.75rem 0.5rem;; /* Pinaliit na padding sa loob ng kahon */
     text-decoration: none; /* Tinatanggal ang underline dahil link ito */
     display: flex; /* Ginagawang flex para ma-center ang text sa loob */
     align-items: center; /* Pinapa-pantay ang text sa gitna nang patayo */
