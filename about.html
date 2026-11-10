@@ -1,25 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <link rel="stylesheet" href="menu.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Accordion - Collapse content</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="menu.css">
+  <script>
+   
+    $(function () {
+      $("#accordion").accordion({
+        collapsible: true
+      });
+    });
+  </script>
+</head>
+  <style>
+    .ui-accordion-header{
+   background: #C21E56;
+   color:rgb(253, 253, 253);
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+    .ui-accordion-content {  
+    width: 100%;  
+    background-color: #fdffd0;  
+    color: #142e04;  
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 10pt;  
+    line-height: 16pt;  
+}  
+  </style>
 </head>
 <body>
-     <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
         <ul class="nav-list">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-            <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="About.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="Gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="Portfolio.html">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
         </ul>
     </nav>
-    <center>
-        <h1>About</h1>
-        <p>About Me</p>
-    </center>
+   <div id="accordion">
+    <h3>About Me</h3>
+    <div>
+     
+      <p>I am John Erson or my online persona as Kai; I am a Cosplayer who does Art as a hobby and plays a little bit of piano. 
+        I'm mostly active in Discord than Facebook so please feel free to contact me in discord if you're interested in commissioning an artwork of your favorite character
+      . I'm Chronically online and my favorite pieces of media are: </p>
+      <ul>
+        <li>Alien Stage</li>
+        <li>Omniscient Reader's Viewpoint </li>
+        <li> Persona 5 Royal</li>
+        <li> Genshin Impact</li>
+      </ul>
+    </div>
+    
+    <h3>Achievements</h3>
+    <div>
+      <li><strong>-2nd Place of Best Cosplay in Literature Month 2025</strong></li>
+      <li><strong>-3rd Place of Chess Tournament </strong></li>
+      <li><strong>-Achieved Honors from Grade 11 to Grade 12 1st Term</strong></li>
+    </div>
+    <h3>Cosplays</h3>
+    <div>
+      <p style="text-decoration: underline;"><strong>Cosplays i have done in the past</strong></p>
+      <ul>
+        <li>Kim Dokja from Omniscient Reader's Viewpoint</li>
+        <li>Ranpo Edogawa from Bungo Stray Dogs</li>
+        <li>Angel Devil from Chainsaw Man</li>
+        <li>Goro Akechi from Persona 5/Royal</li>
+      </ul>
+    </div>
+    <h3>Favorite Artists</h3>
+    <div>
+      <ul>
+        <li>Glass Beach</li>
+        <li>Loona</li>
+        <li>ARTMS</li>
+        <li>Aespa</li>
+        <li>Fromis_9</li>
+        <li>Nightcord at 25:00</li>
+        <li>Le sserafim</li>
+        <li>Tomorrow X Together</li>
+        <li>ZeroBaseOne</li>
+        <li>And2ble</li>
+        <li>Red Velvet</li>
+        <li>Itzy</li>
+      </ul>
+    </div>
+  </div>
+
       </main>
     <footer class="footer">
       <div class="footer-content">
