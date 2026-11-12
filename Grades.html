@@ -22,6 +22,9 @@
         <label>Subject</label>
         <input type="text" id="txtSubject">
 
+        <label>Section</label>
+        <input type="text" id="txtSection">
+
         <label>Grade</label>
         <input type="number" id="txtGrade" min="0" max="100">
 
@@ -35,8 +38,9 @@
                     <th>LRN</th>
                     <th>Name</th>
                     <th>Subject</th>
+                    <th>Section</th>
                     <th>Grade</th>
-                    <th>Action</th>
+                    <th>Action</th> 
                 </tr>
             </thead>
 
@@ -45,15 +49,17 @@
             
         </center>
 
+
+
         <script>
             var txtLrn = document.getElementById("txtLrn");
             var txtName = document.getElementById("txtName");
             var txtSubject = document.getElementById("txtSubject");
             var txtGrade = document.getElementById("txtGrade");
+            var txtSection = document.getElementById("txtSection");
             var btnSave = document.getElementById("save");
             var message = document.getElementById("message");
             var tableBody = document.getElementById("tableBody");
-
             var grades = JSON.parse(localStorage.getItem("grades")) || [];
             var selectedIndex = -1;
 
@@ -64,12 +70,13 @@
                     row.insertCell(0).textContent = grades[i].lrn;
                     row.insertCell(1).textContent = grades[i].name;
                     row.insertCell(2).textContent = grades[i].subject;
-                    row.insertCell(3).textContent = grades[i].grade;
-
+                    row.insertCell(3).textContent = grades[i].section;
+                    row.insertCell(4).textContent = grades[i].grade;
+                    
                     var actionCell = row.insertCell();
                     actionCell.appendChild(makeUpdateButton(i));
-                }
-            }
+                    actionCell.appendChild(makeDeleteButton(i));
+               
 
             function makeUpdateButton(index) {
                 var button = document.createElement("button");
@@ -81,6 +88,15 @@
 
                 return button;
             }
+                function makeDeleteButton(index) {
+                    var button = document.createElement("button");
+                     button.textContent = "Delete";
+                        button.addEventListener("click", function () {
+                    deleteGrade(index);
+                });
+
+                return button;
+            }
 
             function loadForUpdate(index) {
                 selectedIndex = index;
@@ -88,19 +104,45 @@
                 txtLrn.value = grades[index].lrn;
                 txtName.value = grades[index].name;
                 txtSubject.value = grades[index].subject;
+                txtSection.value = grades[index].section;
                 txtGrade.value = grades[index].grade;
-
                 btnSave.value = "Update";
                 message.textContent = "Change the values, then click the Update button above the table.";
             }
+        }
+    }        
+                function deleteGrade(index) {
+                    var sure = confirm("Delete the record of " + grades[index].name + "?");
+
+                    if (!sure) {
+                        return;
+                    }
+                    grades.splice(index, 1);    
+                    if (selectedIndex === index) {
+                    selectedIndex = -1;
+                        btnSave.value = "Save";
+                        txtLrn.value = "";
+                        txtName.value = "";
+                        txtSubject.value = "";
+                        txtSection.value = "";
+                        txtGrade.value = "";
+                } else if (selectedIndex > index) {
+                    selectedIndex = selectedIndex - 1;
+                }
+
+                localStorage.setItem("grades", JSON.stringify(grades)); 
+                    message.textContent = "Deleted.";
+                    showGrades();
+                }
 
             function saveGrade() {
                 var lrn = txtLrn.value.trim();
                 var name = txtName.value.trim();
                 var subject = txtSubject.value.trim();
+                var section = txtSection.value.trim();
                 var grade = txtGrade.value.trim();
 
-                if (lrn === "" || name === "" || subject === "" || grade === "") {
+                if (lrn === "" || name === "" || subject === "" || section === "" || grade === "") {
                     message.textContent = "Please fill in all the boxes.";
                     return;
                 }
@@ -109,6 +151,7 @@
                     lrn: lrn,
                     name: name,
                     subject: subject,
+                    section: section,
                     grade: grade
                 };
 
@@ -127,6 +170,7 @@
                 txtLrn.value = "";
                 txtName.value = "";
                 txtSubject.value = "";
+                txtSection.value = "";
                 txtGrade.value = "";
                 showGrades();
             }
