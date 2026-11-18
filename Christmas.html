@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Tree</title>
+    <a href = "portfolio.html">Home</a>
+
+    <style>
+        /* Canvas styling and light blue winter background */
+        #myDrawing {
+            border: solid 1px green;
+            background-color: #E0F7FA;
+        }
+
+        /* Center the canvas on the screen */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+<body>
+    <canvas height="500" width="1000" id="myDrawing"></canvas>
+
+    <script>
+        // Set up the canvas and 2D drawing context
+        const canvas = document.getElementById("myDrawing");
+        const ctx = canvas.getContext("2d");
+
+        // The Trunk of the tree
+        ctx.fillStyle = '#795548';
+        ctx.fillRect(475, 360, 50, 70);
+
+        // The Whole Tree colors and border style
+        ctx.fillStyle = '#2E7D32';
+        ctx.strokeStyle = '#1B5E20';
+        ctx.lineWidth = 3;
+
+        // Bottom tree tier
+        ctx.beginPath();
+        ctx.moveTo(500, 220);
+        ctx.lineTo(380, 360);
+        ctx.lineTo(620, 360);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // Middle tree tier
+        ctx.beginPath();
+        ctx.moveTo(500, 140);
+        ctx.lineTo(410, 260);
+        ctx.lineTo(590, 260);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // Top tree tier
+        ctx.beginPath();
+        ctx.moveTo(500, 70);
+        ctx.lineTo(440, 170);
+        ctx.lineTo(560, 170);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // The Star on the tree 
+        ctx.beginPath();
+        ctx.moveTo(500, 35);
+        ctx.lineTo(508, 55);
+        ctx.lineTo(530, 55);
+        ctx.lineTo(512, 68);
+        ctx.lineTo(519, 90);
+        ctx.lineTo(500, 77);
+        ctx.lineTo(481, 90);
+        ctx.lineTo(488, 68);
+        ctx.lineTo(470, 55);
+        ctx.lineTo(492, 55);
+        ctx.closePath();
+        ctx.fillStyle = '#FFC107';
+        ctx.strokeStyle = '#FFA000';
+        ctx.lineWidth = 2;
+        ctx.fill();
+        ctx.stroke();
+
+        // Christmas Balls On The Tree
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = '#1B5E20';
+
+        // Red Ornament on the Middle Tree Tier
+        ctx.beginPath();
+        ctx.arc(470, 200, 8, 0, Math.PI * 2);
+        ctx.fillStyle = '#D32F2F';
+        ctx.fill();
+        ctx.stroke();
+
+        // Blue Ornament on the Middle Tree Tier
+        ctx.beginPath();
+        ctx.arc(530, 230, 8, 0, Math.PI * 2);
+        ctx.fillStyle = '#2196F3';
+        ctx.fill();
+        ctx.stroke();
+
+        // Yellow Ornament on the Bottom Tree Tier
+        ctx.beginPath();
+        ctx.arc(450, 310, 8, 0, Math.PI * 2);
+        ctx.fillStyle = '#FFC107';
+        ctx.fill();
+        ctx.stroke();
+
+        // Red Ornament on the Bottom Tree Tier
+        ctx.beginPath();
+        ctx.arc(540, 320, 8, 0, Math.PI * 2);
+        ctx.fillStyle = '#D32F2F';
+        ctx.fill();
+        ctx.stroke();
+
+        // The Candy cane line thickness and the Tip
+        ctx.lineWidth = 10;
+        ctx.lineCap = 'round';
+        
+        // Left candy cane the base
+        ctx.strokeStyle = '#FFFFFF';
+        ctx.beginPath();
+        ctx.arc(310, 230, 20, Math.PI, Math.PI * 2);
+        ctx.lineTo(330, 350);
+        ctx.stroke();
+
+        // The Left candy canes' Red Stripe
+        ctx.strokeStyle = '#D32F2F';
+        ctx.beginPath();
+        ctx.moveTo(315, 260); ctx.lineTo(325, 260);
+        ctx.moveTo(318, 290); ctx.lineTo(328, 290);
+        ctx.moveTo(321, 320); ctx.lineTo(334, 320);
+        ctx.stroke();
+
+        // The Right candy cane (White base)
+        ctx.strokeStyle = '#FFFFFF';
+        ctx.beginPath();
+        ctx.arc(690, 230, 20, Math.PI, Math.PI * 2);
+        ctx.lineTo(670, 350);
+        ctx.stroke();
+
+        // The Right candy canes' Red stripe
+        ctx.strokeStyle = '#D32F2F';
+        ctx.beginPath();
+        ctx.moveTo(686, 260); ctx.lineTo(700, 260);
+        ctx.moveTo(682, 290); ctx.lineTo(690, 290);
+        ctx.moveTo(679, 320); ctx.lineTo(685, 320);
+        ctx.stroke();
+
+        // Holiday greeting text at the bottom
+        ctx.font = 'bold 32px Arial';
+        ctx.fillStyle = '#D32F2F';
+        ctx.textAlign = 'center';
+        ctx.fillText('Merry Christmas Daniel!', 500, 475);
+    </script>
+</body>
+</html>
