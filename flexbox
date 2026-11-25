@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox Try</title>
+    
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            margin-top: 28px;
+            margin-bottom: 10px;
+            color: #334155;
+        }
+
+        .flex-box {
+            display: flex;
+            gap: 8px;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 50px;
+            font-weight: bold;
+            color: white;
+            background-color: #0f766e;
+            border-radius: 6px;
+        }
+
+        .item:nth-child(2) {
+            background-color: #0d9488;
+        }
+
+        .item:nth-child(3) {
+            background-color: #2dd4bf;
+            color: #042f2e;
+        }
+
+        .row {
+            flex-direction: row;
+        }
+
+        .row-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .column {
+            flex-direction: column;
+        }
+
+        .column-reverse {
+            flex-direction: column-reverse;
+        }
+
+        .justify-start {
+            justify-content: flex-start;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-end {
+            justify-content: flex-end;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .justify-around {
+            justify-content: space-around;
+        }
+
+        .justify-evenly {
+            justify-content: space-evenly;
+        }
+
+        .align-box {
+            height: 150px;
+            width: 320px;
+        }
+
+        .align-box .item {
+            flex: 1;
+            width: auto;
+        }
+
+        .align-stretch {
+            align-items: stretch;
+        }
+
+        .align-stretch .item {
+            height: auto;
+        }
+
+        .align-start {
+            align-items: flex-start;
+        }
+
+        .align-center {
+            align-items: center;
+        }
+
+        .align-end {
+            align-items: flex-end;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="portfolio.html" >Home</a>
+
+    <h2>Flex-Direction: Row</h2>
+    <div class="flex-box row">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>Flex-Direction: Row-Reverse</h2>
+    <div class="flex-box row-reverse">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>Flex-Direction: Column</h2>
+    <div class="flex-box column">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>Flex-Direction: Column-Reverse</h2>
+    <div class="flex-box column-reverse">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>Justify-Content: Flex-Start</h2>
+    <div class="flex-box justify-start">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>Justify-Content: Center</h2>
+    <div class="flex-box justify-center">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>Justify-Content: Flex-End</h2>
+    <div class="flex-box justify-end">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>Justify-Content: Space-Between</h2>
+    <div class="flex-box justify-between">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>Justify-Content: Space-Around</h2>
+    <div class="flex-box justify-around">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>Justify-Content: Space-Evenly</h2>
+    <div class="flex-box justify-evenly">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>Align-Items: Stretch</h2>
+    <div class="flex-box align-box align-stretch">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>Align-Items: Flex-Start</h2>
+    <div class="flex-box align-box align-start">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>Align-Items: Center</h2>
+    <div class="flex-box align-box align-center">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>Align-Items: Flex-End</h2>
+    <div class="flex-box align-box align-end">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+</body>
+</html>
