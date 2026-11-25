@@ -1,148 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Accordion - Collapse content</title>
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-  <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="menu.css">
-  <script>
-    $(function () {
-      $("#accordion").accordion({
-        collapsible: true
-      });
-    });
-  </script>
-</head>
-  <style>
-  #accordion {
-    max-width: 700px;
-    margin: 40px auto;
-  }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="menu.css">
+    <script>
+        $(function () {$("#accordion").accordion({
+                collapsible: true,
+                heightStyle: "content"
+            });
+        });
+    </script>
+    <style>
 
-  .ui-accordion-header {
-    background: #C21E56;
-    color: #ffffff;
-    border: 1px solid #2b0404;
-    font-weight: bold;
-  }
-
-
-  .ui-accordion-header:hover {
-    background: #C21E56;
-    color: #ffffff;
-  }
-
-
-  .ui-accordion-header.ui-state-active {
-    background:#C21E56;
-    color: #ffffff;
-    border-bottom: 3px solid#C21E56;
-  }
-
-  .ui-accordion-header .ui-icon {
-    filter: brightness(0) invert(1);
-  }
-
-  .ui-accordion-content {
-    background-color: #fff1cf;
-    color: #0c3b19;
-    border: 1px solid #0c5c26;
-    font-size: 10.5pt;
-    line-height: 16pt;
-  }
-  </style>
+        .ui-accordion-header {
+            background: #C21E56;
+            color: #ffffff;
+            border: 1px solid #2b0404;
+            font-weight: bold;
+        }
+        .ui-accordion-header:hover,
+        .ui-accordion-header.ui-state-active {
+            background: #a31747;
+            color: #ffffff;
+            border-bottom: 3px solid #1e1b15;
+        }
+        .ui-accordion-header .ui-icon {
+            filter: brightness(0) invert(1);
+        }
+        .ui-accordion-content {
+            background-color: #f9ffd6;
+            color: #0c3b19;
+            border: 1px solid #0c5c26;
+            font-size: 10.5pt;
+            line-height: 16pt;
+        }
+        .ui-accordion-content ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+    </style>
 </head>
 <body>
+
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
         <ul class="nav-list">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
     </nav>
-   <div id="accordion">
-    <h3>About Me</h3>
-    <div>
-     
-      <p>I am John Erson or my online persona as Kai; I am a Cosplayer who does Art as a hobby and plays a little bit of piano. 
-        I'm mostly active in Discord than Facebook so please feel free to contact me in discord if you're interested in commissioning an artwork of your favorite character
-      . I'm Chronically online and my favorite pieces of media are: </p>
-      <ul>
-        <li>Alien Stage</li>
-        <li>Omniscient Reader's Viewpoint </li>
-        <li> Persona 5 Royal</li>
-        <li> Genshin Impact</li>
-      </ul>
-    </div>
-    
-    <h3>Achievements</h3>
-    <div>
-      <li><strong>-2nd Place of Best Cosplay in Literature Month 2025</strong></li>
-      <li><strong>-3rd Place of Chess Tournament </strong></li>
-      <li><strong>-Achieved Honors from Grade 11 to Grade 12 1st Term</strong></li>
-    </div>
-    <h3>Cosplays</h3>
-    <div>
-      <p style="text-decoration: underline;"><strong>Cosplays i have done in the past</strong></p>
-      <ul>
-        <li>Kim Dokja from Omniscient Reader's Viewpoint</li>
-        <li>Ranpo Edogawa from Bungo Stray Dogs</li>
-        <li>Angel Devil from Chainsaw Man</li>
-        <li>Goro Akechi from Persona 5/Royal</li>
-      </ul>
-    </div>
-    <h3>Favorite Artists</h3>
-    <div>
-      <ul>
-        <li>Glass Beach</li>
-        <li>Loona</li>
-        <li>ARTMS</li>
-        <li>Aespa</li>
-        <li>Fromis_9</li>
-        <li>Nightcord at 25:00</li>
-        <li>Le sserafim</li>
-        <li>Tomorrow X Together</li>
-        <li>ZeroBaseOne</li>
-        <li>And2ble</li>
-        <li>Red Velvet</li>
-        <li>Itzy</li>
-      </ul>
-    </div>
-  </div>
 
-      </main>
+    <main class="about-layout">
+
+        <aside class="about-side-box">
+            <img src="images/left-pic.jpg" alt="Left decorative picture" class="about-side-pic">
+        </aside>
+
+
+        <div class="about-wrapper">
+            <div class="about-top-row">
+                <aside class="profile-card">
+                    <img src="profile.png" alt="Kai Profile Picture" class="profile-pic">
+                    <h2>Hey, I'm Kai!</h2>
+                    <p class="profile-bio">
+                        I'm Kai—a cosplayer who draws as a hobby and chronically online.
+                    </p>
+                    <div class="profile-meta">
+                        <p><strong>Section:</strong> Grade 12 - Cooper</p>
+                        <p><strong>Main Hangout:</strong> Discord</p>
+                    </div>
+                </aside>
+
+                <section class="accordion-panel">
+                    <div id="accordion">
+                        <h3>About Me</h3>
+                        <div>
+                            <p>
+                                I'm mostly active on Discord rather than Facebook, so feel free to message me there if you're interested in commissioning artwork of your favorite character. I'm chronically online and really into:
+                            </p>
+                            <ul>
+                                <li>Alien Stage</li>
+                                <li>Omniscient Reader's Viewpoint</li>
+                                <li>Persona 5 Royal</li>
+                                <li>Genshin Impact</li>
+                            </ul>
+                        </div>
+
+                        <h3>Achievements</h3>
+                        <div>
+                            <ul>
+                                <li><strong>2nd Place of Best Cosplay in Literature Month 2025</strong></li>
+                                <li><strong>3rd Place of Chess Tournament</strong></li>
+                                <li><strong>Achieved Honors from Grade 11 to Grade 12 1st Term</strong></li>
+                            </ul>
+                        </div>
+
+                        <h3>Cosplays</h3>
+                        <div>
+                            <p style="text-decoration: underline;"><strong>Cosplays I have done in the past</strong></p>
+                            <ul>
+                                <li>Kim Dokja from Omniscient Reader's Viewpoint</li>
+                                <li>Ranpo Edogawa from Bungo Stray Dogs</li>
+                                <li>Angel Devil from Chainsaw Man</li>
+                                <li>Goro Akechi from Persona 5/Royal</li>
+                            </ul>
+                        </div>
+
+                        <h3>Favorite Artists</h3>
+                        <div>
+                            <ul>
+                                <li>Glass Beach</li>
+                                <li>Loona</li>
+                                <li>ARTMS</li>
+                                <li>Aespa</li>
+                                <li>Fromis_9</li>
+                                <li>Nightcord at 25:00</li>
+                                <li>Le Sserafim</li>
+                                <li>Tomorrow X Together</li>
+                                <li>ZeroBaseOne</li>
+                                <li>And2ble</li>
+                                <li>Red Velvet</li>
+                                <li>Itzy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <section class="about-bottom-card">
+                <h3>Commissions &amp; Vibes</h3>
+                <p>
+                    <center>⊹₊˚‧︵‿₊୨♬୧₊‿︵‧˚₊⊹</center>
+                    <br>
+                    𝙸𝚏 𝚎𝚟𝚎𝚛 𝚢𝚘𝚞'𝚛𝚎 𝚒𝚗𝚝𝚎𝚛𝚎𝚜𝚝𝚎𝚍 𝚒𝚗 𝚌𝚘𝚖𝚖𝚒𝚜𝚜𝚒𝚘𝚗𝚒𝚗𝚐 𝚖𝚎 𝚏𝚘𝚛 𝚌𝚑𝚊𝚛𝚊𝚌𝚝𝚎𝚛 𝚊𝚛𝚝, 𝚌𝚘𝚜𝚙𝚕𝚊𝚢, 𝚘𝚛 𝚊𝚗𝚢 𝚘𝚝𝚑𝚎𝚛 𝚌𝚛𝚎𝚊𝚝𝚒𝚟𝚎 𝚙𝚛𝚘𝚓𝚎𝚌𝚝, 
+                    𝚏𝚎𝚎𝚕 𝚏𝚛𝚎𝚎 𝚝𝚘 𝚕𝚎𝚝 𝚖𝚎 𝚔𝚗𝚘𝚠 ^^ !
+                    𝙸 𝚕𝚘𝚟𝚎 𝚌𝚘𝚕𝚕𝚊𝚋𝚘𝚛𝚊𝚝𝚒𝚗𝚐 𝚠𝚒𝚝𝚑 𝚏𝚎𝚕𝚕𝚘𝚠 𝚊𝚛𝚝𝚒𝚜𝚝𝚜 𝚘𝚛 𝚌𝚘𝚜𝚙𝚕𝚊𝚢𝚎𝚛𝚜 &lt;𝟹
+                    <br>
+                    <center>⊹₊˚‧︵‿₊୨♬୧₊‿︵‧˚₊⊹</center>
+                </p>
+            </section>
+        </div>
+
+       
+        <aside class="about-side-box">
+            <img src="right-pic.jpg" alt="Right decorative picture" class="about-side-pic">
+        </aside>
+    </main>
+
     <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-text">
-          <h3>Stay Connected!</h3>
-          <p>
-                           <center>﹒⌗﹒₊‧ ⏔⏔⏔ ꒰ ᧔ෆ᧓ ꒱ ⏔⏔⏔ ﹒౨ৎ˚</center>
-            ۪𓈒 ຼ ͜𓐇˚ִִ𓈒꒱꒱ "Thank you for visiting my Website ^^. Connect with me on my socials 
-            or reach out to me via Discord or Email for collaborations and inquiries. Your
-            support and feedback are greatly and utmost appreciated ^^ ." ۪𓈒 ຼ ͜𓐇˚ִִ𓈒꒱꒱
-                          <center>﹒౨ৎ˚₊‧  ⏔⏔⏔ ꒰ ᧔ෆ᧓ ꒱ ⏔⏔⏔ ﹒⌗﹒₊‧</center>
-          </p>
+        <div class="footer-content">
+            <div class="footer-text">
+                <h3>Stay Connected!</h3>
+                <p class="deco">﹒⌗﹒₊‧ ⏔⏔⏔ ꒰ ᧔ෆ᧓ ꒱ ⏔⏔⏔ ﹒౨ৎ˚</p>
+                <p>
+                    ۪𓈒 ຼ ͜𓐇˚ִִ𓈒꒱꒱ "Thank you for visiting my Website ^^. Connect with me on my socials 
+                    or reach out to me via Discord or Email for collaborations and inquiries. Your
+                    support and feedback are greatly and utmost appreciated ^^ ." ۪𓈒 ຼ ͜𓐇˚ִִ𓈒꒱꒱
+                </p>
+                <p class="deco">﹒౨ৎ˚₊‧ ⏔⏔⏔ ꒰ ᧔ෆ᧓ ꒱ ⏔⏔⏔ ﹒⌗﹒₊‧</p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Follow Me</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/ChronicRonan" target="_blank">f</a>
+                    <a href="https://discord.com/users/1136677336461348915" target="_blank">𖦹</a>
+                    <a href="https://www.instagram.com/sunhasrisenforhim/" target="_blank">Insta</a>
+                </div>
+            </div>
         </div>
 
-        <div class="footer-social">
-          <h3>Follow Me</h3>
-          <div class="social-links">
-            <a href="https://www.facebook.com/ChronicRonan">f</a>
-            <a href="https://discord.com/users/1136677336461348915">𖦹</a>
-            <a href="https://www.instagram.com/sunhasrisenforhim/">🅾</a>
-          </div>
+        <div class="footer-bottom">
+            <p>©2026 All rights Reserved | Designed by : Kai</p>
         </div>
-      </div>
+    </footer>
 
-      <div class="footer-bottom">
-        <p>©2026 All rights Reserved | Designed by : Kai</p>
 </body>
 </html>
