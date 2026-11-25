@@ -1,174 +1,333 @@
-/* Universal reset - Tinatanggal ang default margin/padding at ginagawang kasama ang padding sa laki ng element */
-* {
-    margin: 0px;
-    padding: 0px;
+/* Universal reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-color: #feffed; /* Kulay ng background ng buong page */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Uri ng font na gagamitin */
-    min-height: 100vh; /* Sineset ang taas ng body sa buong taas ng screen */
+    position: relative;
+    background-color: #feffed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* 1. Main Navbar Header Container - Bar sa taas na naglalaman ng menu */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("images/banner.jpg") center / cover no-repeat;
+    opacity: 0.25;
+    z-index: -1;
+    pointer-events: none;
+}
+
+main {
+    flex: 1;
+}
+
+/* 1. Navbar */
 .navbar {
-    background-color: #C21E56; /* Red na background para sa buong navbar */
-    width: 100%; /* Sinasakop ang buong lapad ng screen */
-}
-
-/* 2. Navigation List - Layout ng mga menu buttons */
-.nav-list {
-    display: flex; /* Ginagawang Flexbox para madaling i-align ang mga menu items */
-    flex-direction: row; /* Iniaayos ang mga menu items mula kaliwa pakanan */
-    justify-content: flex-start; /* Pinapanatili ang mga items sa kaliwang bahagi */
-    align-items: center; /* Pantay-pantay sa gitna nang patayo (vertically) */
-    list-style-type: none; /* Tinatanggal ang default na bullet points ng list */
-    margin: 0;
-    padding: 0;
-}
-
-/* 3. Individual Nav Links - Style ng bawat mismong link sa navbar */
-.nav-link {
-    display: block; /* Ginagawang clickable ang buong espasyo ng box */
-    padding: 14px 20px; /* Espasyo sa loob ng button */
-    color: #ffeaf3; /* Kulay ng text */
-    text-decoration: none; /* Tinatanggal ang salungguhit (underline) ng link */
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 15px; /* Sukat ng font ng menu links */
-    font-weight: 600; /* Ginagawang semi-bold ang text */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth na transition kapag nag-hover */
-}
-
-/* Style kapag hindi pa nabibisita ang link */
-.nav-link:link {
-    color: #FFFFFF;
-}
-
-/* Style kapag nabisita na ang link */
-.nav-link:visited {
-    color: #E0E0E0;
-}
-
-/* Style kapag itinapat ang mouse sa link o kapag active/kasalukuyang page */
-.nav-link:hover, .nav-link.active {
-    background-color: #F2C265; /* Nag-iiba ang kulay ng background */
-    color: #FFFFFF; /* Puti ang kulay ng text kapag nakatapat ang mouse */
-}
-
-/* Style kapag tinututukan gamit ang keyboard (Tab button) */
-.nav-link:focus {
-    outline: 4px solid #fe005d; /* Dilaw na border outline para sa accessibility */
-}
-
-/* 4. Grid Styles - Compact na container para sa mga portfolio items */
-.grid-container {
-    display: grid; /* Ginagawang CSS Grid ang layout */
-    max-width: 1100px; /* Nilalagyan ng max-width para hindi masyadong kumalat */
-    margin: 2rem auto; /* Sinisentro ang buong grid sa gitna ng screen */
-    grid-template-columns: repeat(4, 1fr); /* Hina-hati sa 4 na pantay-pantay na kolum */
-    grid-template-rows: repeat(3, 55px); /* Ginagawang mas payat/mababa ang bawat row (55px na lang) */
-    gap: 0.75rem; /* Mas maliit na espasyo sa pagitan ng mga grid box */
-    padding: 0 1.5rem; /* Espasyo sa gilid para hindi dumikit sa screen edges */
-}
-
-/* Style para sa bawat kahon (box) sa loob ng grid - mas pinaliit ang padding */
-.box {
-    background-color:#C21E56; /* Complementary background color */
-    color: #fff7cd; /* Kulay ng text */
-    font-size: 0.8rem; /* Mas maliit na font para sakto sa mas payat na kahon */
-    font-weight: 600; /* Kapal ng text */
-    padding: 0.75rem 0.5rem;; /* Pinaliit na padding sa loob ng kahon */
-    text-decoration: none; /* Tinatanggal ang underline dahil link ito */
-    display: flex; /* Ginagawang flex para ma-center ang text sa loob */
-    align-items: center; /* Pinapa-pantay ang text sa gitna nang patayo */
-    justify-content: center; /* Pinapa-pantay ang text sa gitna nang pahiga */
-    text-align: center; /* Naka-center ang text kapag higit sa isang linya */
-    border-radius: 6px; /* Kurbada sa mga sulok */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Banayad na shadow */
-    transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth na animation sa hover */
-}
-
-/* Style kapag itinapat ang mouse sa grid box */
-.box:hover {
-    background-color: #f4fba8; /* Nag-iiba ang kulay para tumugma sa navbar hover */
-    color: #ffffff; /* Ginagawang puti ang text */
-    transform: translateY(-2px); /* Bahagyang umaangat ang kahon kapag tinatapatan ng mouse */
-}
-/* footer */
-.footer {
-    background-color: #C21E56; 
-    color: #ffd3ea;        
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    bottom: 0;
-    position: absolute;
+    background-color: #C21E56;
     width: 100%;
-    left: 0;
 }
 
-.footer-content {
+.nav-list {
     display: flex;
-    justify-content: space-around;
-    padding: 20px 8%;
-    height: 175px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    list-style-type: none;
 }
 
-.footer-text {
-    width: 50%;
-}
-
-.footer-text p {
-    margin: 10px 15px;
-    font-size: 12px;
-}
-
-.footer-social {
-    text-align: center;
-    padding-top: 25px;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 15px;
-}
-
-.social-links a {
-    color: #de7c96;           
-    font-size: 25px;
+.nav-link {
+    display: block;
+    padding: 14px 20px;
+    color: #FFFFFF;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-.social-links a:hover {
-    color: #edf7b1;           
+.nav-link:hover,
+.nav-link.active {
+    background-color: #ffe6b3;
+    color: #2b0404;
 }
 
-.footer-bottom {
-    background-color: #6a112f; 
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 12px;
+.nav-link:focus {
+    outline: 3px solid #fe005d;
+    outline-offset: -3px;
 }
 
-
-/* Gallery */
-h1 {
-    text-align: center;
-    color: #1F3864;
-}
-
-.carousel {
-    max-width: 800px;
+/* 2. Home Page (Flexbox Layout) */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 36px 20px;
+    max-width: 960px;
+    width: 100%;
     margin: 0 auto;
+}
+
+.welcome-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 650px;
+    width: 100%;
+    background-color: #fff8e7;
+    border: 2px solid #C21E56;
+    border-radius: 12px;
+    padding: 36px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-tag {
+    color: #C21E56;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.welcome-box h1 {
+    color: #C21E56;
+    font-size: 2rem;
+    margin-bottom: 4px;
+}
+
+.welcome-box h2 {
+    color: #555;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.overview-text {
+    color: #333;
+    line-height: 1.6;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.quick-links-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+}
+
+.quick-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    background-color: #fff8e7;
+    border: 2px solid #C21E56;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.quick-card:hover {
+    transform: translateY(-3px);
+    background-color: #ffe6b3;
+}
+
+.quick-card h3 {
+    color: #C21E56;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+.quick-card p {
+    color: #2b2b2b;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* 3. About Page (Flexbox Layout + Side Pictures) */
+.about-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 28px 20px;
+}
+
+.about-side-box {
+    flex: 0 0 180px;
+    display: flex;
+    align-items: stretch;
+}
+
+.about-side-pic {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    border: 2px solid #C21E56;
+    border-radius: 12px;
+    background-color: #fff8e7;
+}
+
+.about-wrapper {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-top-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 28px;
+}
+
+.profile-card {
+    flex: 0 0 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fff8e7;
+    border: 2px solid #C21E56;
+    border-radius: 12px;
+    padding: 24px 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #C21E56;
+    background-color: #ffd3ea;
+    margin-bottom: 14px;
+}
+
+.profile-card h2 {
+    color: #C21E56;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.profile-bio {
+    color: #2b2b2b;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.profile-meta {
+    width: 100%;
+    border-top: 1px dashed #C21E56;
+    padding-top: 12px;
+    font-size: 0.88rem;
+    color: #1F3864;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.accordion-panel {
+    flex: 1;
+    min-width: 0;
+}
+
+.about-bottom-card {
+    background-color: #fff8e7;
+    border: 2px solid #C21E56;
+    border-radius: 12px;
+    padding: 20px 24px;
+}
+
+.about-bottom-card h3 {
+    color: #C21E56;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.about-bottom-card p {
+    color: #2b2b2b;
+    font-size: 0.94rem;
+    line-height: 1.55;
+}
+
+/* 4. Grid Styles (Portfolio) */
+.grid-container {
+    display: grid;
+    max-width: 1100px;
+    margin: 2rem auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 55px);
+    gap: 0.75rem;
+    padding: 0 1.5rem;
+}
+
+.box {
+    background-color: #C21E56;
+    color: #fff7cd;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.75rem 0.5rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.box:hover {
+    background-color: #F2C265;
+    color: #2b0404;
+    transform: translateY(-2px);
+}
+
+/* 5. Gallery Carousel */
+.carousel {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 16px;
 }
 
 .slides {
     position: relative;
+    width: 100%;
     aspect-ratio: 16 / 9;
-    /* keeps the shape on any screen width */
+    min-height: 260px;
     overflow: hidden;
     background: #000;
     border-radius: 7px;
@@ -176,27 +335,29 @@ h1 {
 
 .slide {
     position: absolute;
-    /* stack all slides in the same spot */
     inset: 0;
+    width: 100%;
+    height: 100%;
     margin: 0;
 }
 
 .slide img {
     width: 100%;
-    height: 90%;
+    height: 100%;
     object-fit: cover;
-    /* fill the box without stretching */
     display: block;
 }
 
 .slide figcaption {
     position: absolute;
-    left: 0;
     right: 0;
     bottom: 0;
-    padding: 12px 16px;
-    background: rgba(0, 0, 0, 0.55);
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.35);
     color: #fff;
+    font-size: 14px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+    z-index: 3;
 }
 
 .nav {
@@ -204,35 +365,40 @@ h1 {
     top: 50%;
     transform: translateY(-50%);
     z-index: 5;
+    flex-shrink: 0;
     border: none;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.55);
     color: #fff;
     font-size: 24px;
+    line-height: 1;
     padding: 10px 14px;
     cursor: pointer;
+    border-radius: 4px;
 }
 
 .nav:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
 }
 
 .prev {
-    left: 8px;
+    left: 10px;
 }
 
 .next {
-    right: 8px;
+    right: 10px;
 }
 
 .dots {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
     padding: 12px 0;
 }
 
 .dot {
     width: 12px;
     height: 12px;
-    margin: 0 5px;
     padding: 0;
     border: none;
     border-radius: 50%;
@@ -241,5 +407,185 @@ h1 {
 }
 
 .dot.active {
-    background: #1F3864;
+    background: #C21E56;
+}
+
+/* 6. Contact Page (2x2 Flexbox Cards) */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    max-width: 1020px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.contact-card {
+    flex: 1 1 calc(50% - 16px);
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    background-color: #fff1cf;
+    border: 2px solid #C21E56;
+    border-radius: 16px;
+    padding: 28px 34px;
+}
+
+.contact-label {
+    color: #C21E56;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.contact-value {
+    color: #1F3864;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+a.contact-value:hover {
+    text-decoration: underline;
+}
+
+/* 7. Footer (Compressed) */
+.footer {
+    background-color: #C21E56;
+    color: #ffd3ea;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 14px 20px;
+}
+
+.footer-text {
+    flex: 1;
+    max-width: 620px;
+}
+
+.footer-text h3 {
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.footer-text p {
+    margin: 2px 0;
+    font-size: 11.5px;
+    line-height: 1.35;
+}
+
+.deco,
+.kaomoji {
+    text-align: center;
+    font-size: 10.5px;
+    opacity: 0.9;
+}
+
+.footer-social {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.footer-social h3 {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 4px;
+}
+
+.social-links a {
+    color: #ffd3ea;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+    color: #F2C265;
+    transform: translateY(-1px);
+}
+
+.footer-bottom {
+    background-color: #6a112f;
+    color: white;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 11px;
+}
+
+/* 8. Responsive Layout for Tablets & Mobile Screens */
+@media (max-width: 1024px) {
+    .about-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-side-box {
+        flex: none;
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    .about-side-pic {
+        height: 180px;
+        min-height: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .quick-links-row {
+        flex-direction: column;
+    }
+
+    .about-top-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .profile-card {
+        flex: none;
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-text {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-grid {
+        gap: 20px;
+        margin: 24px auto;
+    }
+
+    .contact-card {
+        flex: 1 1 100%;
+        padding: 22px 24px;
+    }
 }
