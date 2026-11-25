@@ -6,6 +6,12 @@
     <title>Gallery</title>
     <link rel="stylesheet" href="menu.css">
 </head>
+
+<style>
+  h1{
+    color:crimson
+  }
+</style>
 <body>
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
         <ul class="nav-list">
@@ -16,10 +22,111 @@
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    <center>
-        <h1>Gallery</h1>
-        <p>Photos and Recollections</p>
-    </center>
+<center>
+<h1>ᴍʏ ᴘʜᴏᴛᴏ ɢᴀʟʟᴇʀʏ</h1>
+</center>
+<div class="carousel" id="carousel">
+  <div class="slides">
+    <figure class="slide">
+
+      <img src="images/me.jpg" alt="Describe image 1">
+      <figcaption>Me</figcaption>
+    </figure>
+
+    <figure class="slide">
+      <img src="images/job.jpg" alt="Describe image 2">
+      <figcaption>Future Job (Me Fr)</figcaption>
+    </figure>
+
+    <figure class="slide">
+      <img src="images/art.jpg" alt="Describe image 2">
+      <figcaption>Hobbies (Art)</figcaption>
+    </figure>
+
+    <figure class="slide">
+     <img src="images/hobby2.jpg" alt="Describe image 2">
+     <figcaption>Hobbies(Gaming)</figcaption>
+    </figure>
+
+    <figure class="slide">
+      <img src="images/friend.jpg" alt="Describe image 3">
+      <figcaption>My Friends</figcaption>
+
+    </figure>
+    <figure class="slide">
+      <img src="images/friend2.jpg" alt="Describe image 4">
+      <figcaption>My Friends</figcaption>
+    </figure>
+    <button class="nav prev" type="button" aria-label="Previous
+slide">&#10094;</button>
+
+
+    <button class="nav next" type="button" aria-label="Next slide">&#10095;</button>
+  </div>
+  <div class="dots"></div>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+  $(document).ready(function () {
+    // 1. Cache elements and settings
+    const $carousel = $("#carousel");
+    const $slides = $carousel.find(".slide");
+    const $dotsBox = $carousel.find(".dots");
+    const total = $slides.length;
+    const FADE_TIME = 500; // milliseconds
+    const DELAY = 4000; // time between automatic slides
+    let current = 0; // index of the visible slide
+    let timer = null; // holds the autoplay timer
+    // 2. Initial state: show only the first slide
+    $slides.hide().eq(0).show();
+    // 3. Create one dot per slide
+    $slides.each(function (i) {
+      $("<button>")
+        .attr({ type: "button", "aria-label": "Go to slide " + (i + 1) })
+        .addClass("dot" + (i === 0 ? " active" : ""))
+        .data("index", i)
+        .appendTo($dotsBox);
+    });
+    const $dots = $dotsBox.find(".dot");
+    // 4. Show a specific slide
+    function showSlide(index) {
+      if (index === current) return; // nothing to do
+      $slides.eq(current).stop(true, true).fadeOut(FADE_TIME);
+      $slides.eq(index).stop(true, true).fadeIn(FADE_TIME);
+      $dots.removeClass("active").eq(index).addClass("active");
+      current = index;
+    }
+    function nextSlide() { showSlide((current + 1) % total); }
+    function prevSlide() { showSlide((current - 1 + total) % total); }
+    // 5. Controls
+    $carousel.on("click", ".next", nextSlide);
+    $carousel.on("click", ".prev", prevSlide);
+    $dotsBox.on("click", ".dot", function () {
+      showSlide($(this).data("index"));
+    });
+    // 6. Autoplay (pauses on hover)
+    function startAutoplay() {
+      stopAutoplay(); // avoid duplicate timers
+      timer = setInterval(nextSlide, DELAY);
+    }
+    function stopAutoplay() {
+      clearInterval(timer);
+    }
+    $carousel.on("mouseenter", stopAutoplay)
+      .on("mouseleave", startAutoplay);
+    startAutoplay();
+    // 7. Keyboard control
+    $(document).on("keydown", function (event) {
+      if (event.key === "ArrowRight") {
+        nextSlide();
+      } else if (event.key === "ArrowLeft") {
+        prevSlide();
+      }
+    });
+  });
+</script>
+
+
       </main>
     <footer class="footer">
       <div class="footer-content">
@@ -39,7 +146,7 @@
           <div class="social-links">
             <a href="https://www.facebook.com/ChronicRonan">f</a>
             <a href="https://discord.com/users/1136677336461348915">𖦹</a>
-            <a href="https://www.instagram.com/sunhasrisenforhim/">🅾</a>
+            <a href="https://www.instagram.com/sunhasrisenforhim/">Insta</a>
           </div>
         </div>
       </div>
@@ -48,4 +155,6 @@
         <p>©2026 All rights Reserved | Designed by : Kai</p>
 
 </body>
+</html>
+
 </html>
