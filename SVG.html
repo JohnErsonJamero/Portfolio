@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG SHAPES</title>
+    <a href ="portfolio.html">Home</a>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f8f6fa;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: purple;
+        }
+       
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+     
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card p {
+            font-size: 20px;
+            font-weight: bold;
+            color: rebeccapurple;
+            margin-top: 0;
+        }
+        svg {
+            border: 2px solid mediumpurple;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>SVG SHAPES</h1>
+
+    <div class="grid-container">
+        
+        <div class="card">
+            <p>SVG Circle</p>
+            <svg width="250" height="250">
+      
+                <circle cx="125" cy="125" r="100" fill="pink" stroke="deepskyblue" stroke-width="5" />
+            </svg>
+        </div>
+
+        <div class="card">
+            <p>SVG Square</p>
+            <svg width="250" height="250" viewBox="0 0 100 100">
+  
+                <rect x="25" y="25" width="50" height="50" fill="mediumpurple" stroke="gold" stroke-width="4" />
+            </svg>
+        </div>
+
+        <div class="card">
+            <p>SVG Star</p>
+            <svg width="250" height="250" viewBox="0 0 205 220">
+       
+                <polygon points="100,10 40,198 190,78 10,78 160,198"
+                style="fill:gold;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+            </svg>
+        </div>
+
+        <div class="card">
+            <p>SVG Rectangle</p>
+            <svg width="250" height="250">
+                
+                <rect x="25" y="75" width="200" height="100" fill="skyblue" stroke="hotpink" stroke-width="6" />
+            </svg>
+        </div>
+
+        <div class="card">
+            <p>SVG Ellipse</p>
+            <svg height="250" width="250"> 
+                <defs>
+                   
+                    <linearGradient id="grad1">
+                        <stop offset="0%" stop-color="hotpink" />
+                        <stop offset="100%" stop-color="deepskyblue" />
+                    </linearGradient>
+                </defs>
+                <ellipse cx="125" cy="125" rx="85" ry="55" fill="url(#grad1)" stroke="purple" stroke-width="4" />
+                <text fill="yellow" font-size="45" font-family="Verdana" font-weight="bold" x="98" y="140">SVG</text>
+            </svg>
+        </div>
+
+    </div>
+
+</body>
+</html>
