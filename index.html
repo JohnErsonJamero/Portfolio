@@ -3,71 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>  
+    <title>Home | Kai's Portfolio</title>
     <link rel="stylesheet" href="menu.css">
 </head>
-<body>
+<body class="home-page">
 
-    <nav class="navbar" role="navigation" aria-label="Main Navigation"> 
-        <ul class="nav-list"> 
-            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li> 
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li> 
-            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> 
-            <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li> 
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> 
-        </ul> 
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
     </nav>
-        <div class="home-container">
-            <section class="welcome-box">
+
+    <main class="home-container">
+        <section class="welcome-box">
+            <div class="welcome-left">
+                <img src="images/pfp.jpg" alt="John Erson E. Jamero Profile Picture" class="home-pfp">
+                <p class="pfp-caption">Cosplayer • Artist • Gamer • !! MINOR !!</p>
+                <p class="pfp-subtext">Grade 12 - Cooper </p>
+            </div>
+
+           
+            <div class="welcome-right">
                 <p class="welcome-tag">Welcome to my personal website</p>
-                <h1>- - - - -- - - - - - -</h1>
-                <h2>Grade 12 - Cooper</h2>
-                <p class="overview-text">
-                      ₊  ◞       ⠀_ _   ₊  ◞ 
-                    <br>
-                    ⠀  𐙚 𝗛𝗶! 𝗜'𝗺 <strong>Kai</strong>｡ 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 𝗺𝘆 𝗽𝗲𝗿𝘀𝗼𝗻𝗮𝗹 𝘀𝗶𝘁𝗲 𝘁𝗼 𝗹𝗲𝗮𝗿𝗻 𝗺𝗼𝗿𝗲 𝗮𝗯𝗼𝘂𝘁 𝗺𝗲｡ ˳  ⁺  
-                    𝘃𝗶𝗲𝘄 𝗺𝘆 𝘀𝗰𝗵𝗼𝗼𝗹 𝗽𝗼𝗿𝘁𝗳𝗼𝗹𝗶𝗼 𝗽𝗿𝗼𝗷𝗲𝗰𝘁𝘀❟ 𝗼𝗿 𝗴𝗲𝘁 𝗶𝗻 𝘁𝗼𝘂𝗰𝗵 𝗳𝗼𝗿 𝗰𝗼𝗺𝗺𝗶𝘀𝘀𝗶𝗼𝗻𝘀 𝗮𝗻𝗱 𝗰𝗼𝗹𝗹𝗮𝗯𝗼𝗿𝗮𝘁𝗶𝗼𝗻𝘀｡ ˳  ⁺  
-                      ₊  ◞ 
-                </p>
-            </section>
+                <h1>John Erson E. Jamero</h1>
+                <h2><strong>The Angel Devil / 天使の悪魔  </strong></h2>
 
-            <section class="quick-links-row" aria-label="Quick Navigation">
-                <a href="about.html" class="quick-card">
-                    <h3>About</h3>
-                    <p>Background, achievements, cosplays, and favorites.</p>
-                </a>
-                <a href="portfolio.html" class="quick-card">
-                    <h3>Portfolio</h3>
-                    <p>My Performance Tasks and Projects.</p>
-                </a>
-                <a href="contact.html" class="quick-card">
-                    <h3>Contact</h3>
-                    <p>Reach out via Discord, Facebook, or email.</p>
-                </a>
-            </section>
-        </div>
+                <div class="welcome-text-columns">
+                    <p class="overview-text">
+                        Hi! I'm <strong>Kai</strong>. Welcome to my personal space where you can explore my background,
+                         creative hobbies like character cosplay, illustration, and playing piano, 
+                         plus my favorite fandoms and games.
+                    </p>
+                    <p class="overview-text">
+                        You can browse on my performance tasks and c
+                        oding exercises in the portfolio, view personal snapshots in the gallery, or 
+                        reach out if you're interested in commissions or collaborations.
+                    </p>
+                </div>
+            </div>
+        </section>
 
+        <!-- Flexbox Quick Links Row -->
+        <section class="quick-links-row" aria-label="Quick Navigation">
+            <a href="about.html" class="quick-card">
+                <h3>About</h3>
+                <p>Background, achievements, cosplays, and favorites.</p>
+            </a>
+            <a href="gallery.html" class="quick-card">
+                <h3>Gallery</h3>
+                <p>Photos, art, hobbies, and memories.</p>
+            </a>
+            <a href="portfolio.html" class="quick-card">
+                <h3>Portfolio</h3>
+                <p>My Performance Tasks and Projects.</p>
+            </a>
+            <a href="contact.html" class="quick-card">
+                <h3>Contact</h3>
+                <p>Reach out via Discord, Facebook, or email.</p>
+            </a>
+        </section>
+
+        <!-- Extra Overview Content (Flexbox) -->
+        <section class="home-highlights" aria-label="Website Overview">
+            <div class="highlight-box">
+                <h3>Who I Am</h3>
+                <p>A Senior High School student in Grade 12 - Cooper who enjoys character cosplay, illustration, rhythm and story-driven games, and music.</p>
+            </div>
+            <div class="highlight-box">
+                <h3>What's Inside</h3>
+                <p>This site brings together my personal profile, past cosplay and art highlights, school performance tasks, and direct contact info in one place.</p>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-text">
                 <h3>Stay Connected!</h3>
-                <p class="kaomoji">﹒⌗﹒₊‧ ⏔⏔⏔ ꒰ ᧔ෆ᧓ ꒱ ⏔⏔⏔ ﹒౨ৎ˚</p>
+                <p class="kaomoji" aria-hidden="true">﹒⌗﹒₊‧ ⏔⏔⏔ ꒰ ᧔ෆ᧓ ꒱ ⏔⏔⏔ ﹒౨ৎ˚</p>
                 <p>
-                    ۪𓈒 ຼ ͜𓐇˚ִִ𓈒꒱꒱ "Thank you for visiting my Website ^^. Connect with me on my socials 
-                    or reach out to me via Discord or Email for collaborations and inquiries. Your
-                    support and feedback are greatly and utmost appreciated ^^ ." ۪𓈒 ຼ ͜𓐇˚ִִ𓈒꒱꒱
+                    "Thank you for visiting my website! Connect with me on my socials or reach out via Discord or Email for collaborations and inquiries. Your support and feedback are greatly appreciated."
                 </p>
-                <p class="kaomoji">﹒౨ৎ˚₊‧ ⏔⏔⏔ ꒰ ᧔ෆ᧓ ꒱ ⏔⏔⏔ ﹒⌗﹒₊‧</p>
+                <p class="kaomoji" aria-hidden="true">﹒౨ৎ˚₊‧ ⏔⏔⏔ ꒰ ᧔ෆ᧓ ꒱ ⏔⏔⏔ ﹒⌗﹒₊‧</p>
             </div>
 
             <div class="footer-social">
                 <h3>Follow Me</h3>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/ChronicRonan" target="_blank">f</a>
-                    <a href="https://discord.com/users/1136677336461348915" target="_blank">𖦹</a>
-                    <a href="https://www.instagram.com/sunhasrisenforhim/" target="_blank">🅾</a>
+                    <a href="https://www.facebook.com/ChronicRonan" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+                    <a href="https://discord.com/users/1136677336461348915" target="_blank" rel="noopener noreferrer" aria-label="Discord">𖦹</a>
+                    <a href="https://www.instagram.com/sunhasrisenforhim/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
                 </div>
             </div>
         </div>
