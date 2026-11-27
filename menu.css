@@ -20,7 +20,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background-image: url("banner.jpg") center / cover no-repeat;
+    background: url("banner.jpg") center / cover no-repeat;
     opacity: 0.22;
     z-index: -1;
     pointer-events: none;
