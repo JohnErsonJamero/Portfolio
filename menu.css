@@ -8,7 +8,6 @@
 }
 
 body {
-    position: relative;
     background-color: #feffed;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
@@ -20,15 +19,22 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: url("banner.jpg") center / cover no-repeat;
+    background: url("images/banner.jpg") center / cover no-repeat;
     opacity: 0.22;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
 }
 
 /* Different background image only on index.html */
 body.home-page::before {
-    background-image: url("home-bg.jpg");
+    background-image: url("images/home-bg.jpg");
+}
+
+.navbar,
+main,
+.footer {
+    position: relative;
+    z-index: 1;
 }
 
 main {
