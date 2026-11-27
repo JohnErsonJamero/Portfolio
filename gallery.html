@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | Kai's Portfolio</title>
+    <title>Portfolio | Kai's Portfolio</title>
     <link rel="stylesheet" href="menu.css">
 </head>
 <body>
@@ -11,117 +11,40 @@
         <ul class="nav-list">
             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
-            <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <main>
-        <h1 class="gallery-heading">My Photo Gallery</h1>
+    <main class="portfolio-wrapper">
+        <header class="portfolio-header">
+            <h1>School &amp; Coding Portfolio</h1>
+            <p>Performance tasks, layouts, JavaScript exercises, and web experiments from Grade 12 - Cooper.</p>
+        </header>
 
-        <div class="carousel" id="carousel">
-            <div class="slides">
-                <figure class="slide">
-                    <img src="images/me.jpg" alt="Photo of Kai">
-                    <figcaption>Me</figcaption>
-                </figure>
-
-                <figure class="slide">
-                    <img src="images/job.jpg" alt="Future career inspiration photo">
-                    <figcaption>Future Job (Me Fr)</figcaption>
-                </figure>
-
-                <figure class="slide">
-                    <img src="images/art.jpg" alt="Artwork and illustration hobby highlight">
-                    <figcaption>Hobbies (Art)</figcaption>
-                </figure>
-
-                <figure class="slide">
-                    <img src="images/hobby2.jpg" alt="Gaming hobby highlight">
-                    <figcaption>Hobbies (Gaming)</figcaption>
-                </figure>
-
-                <figure class="slide">
-                    <img src="images/friend.jpg" alt="Photo with friends">
-                    <figcaption>My Friends</figcaption>
-                </figure>
-
-                <figure class="slide">
-                    <img src="images/friend2.jpg" alt="Another photo with friends">
-                    <figcaption>My Friends</figcaption>
-                </figure>
-
-                <button class="nav prev" type="button" aria-label="Previous slide">&#10094;</button>
-                <button class="nav next" type="button" aria-label="Next slide">&#10095;</button>
-            </div>
-            <div class="dots"></div>
+        <!-- Grid Container for Portfolio Items -->
+        <div class="grid-container">
+            <a href="Cooper.html" class="box">Cooper Class Schedule</a>
+            <a href="ClassSchedule.html" class="box">Cooper Class Schedule Stylized</a>
+            <a href="Form.html" class="box">Form Element</a>
+            <a href="Calculator.html" class="box">Calculator</a>
+            <a href="PortalLogin2.html" class="box">Portal Login</a>
+            <a href="example.html" class="box">JavaScript</a>
+            <a href="DiscountCalculator.html" class="box">Discount Calculator</a>
+            <a href="DeveloperProfile.html" class="box">.Net Developer Profile</a>
+            <a href="StudentArray.html" class="box">Tabular Student Data</a>
+            <a href="DemoOnGrid.html" class="box">Demo on Grid</a>
+            <a href="LoginLogic.html" class="box">Login Logic</a>
+            <a href="Drag&Drop.html" class="box">Drag And Drop API</a>
+            <a href="INDEX.html" class="box">Drag And Drop Test</a>
+            <a href="Jquery.html" class="box">JQuery Sample</a>
+            <a href="motion.html" class="box">Image Carousel Drill</a>
+            <a href="Grades.html" class="box">HTML CRUD</a>
+            <a href="SVG.html" class="box">SVG Shapes</a>
+            <a href="Christmas.html" class="box">Canvas</a>
         </div>
     </main>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            const $carousel = $("#carousel");
-            const $slides = $carousel.find(".slide");
-            const $dotsBox = $carousel.find(".dots");
-            const total = $slides.length;
-            const FADE_TIME = 500;
-            const DELAY = 4000;
-            let current = 0;
-            let timer = null;
-
-            $slides.hide().eq(0).show();
-
-            $slides.each(function (i) {
-                $("<button>")
-                    .attr({ type: "button", "aria-label": "Go to slide " + (i + 1) })
-                    .addClass("dot" + (i === 0 ? " active" : ""))
-                    .data("index", i)
-                    .appendTo($dotsBox);
-            });
-
-            const $dots = $dotsBox.find(".dot");
-
-            function showSlide(index) {
-                if (index === current) return;
-                $slides.eq(current).stop(true, true).fadeOut(FADE_TIME);
-                $slides.eq(index).stop(true, true).fadeIn(FADE_TIME);
-                $dots.removeClass("active").eq(index).addClass("active");
-                current = index;
-            }
-
-            function nextSlide() { showSlide((current + 1) % total); }
-            function prevSlide() { showSlide((current - 1 + total) % total); }
-
-            $carousel.on("click", ".next", nextSlide);
-            $carousel.on("click", ".prev", prevSlide);
-            $dotsBox.on("click", ".dot", function () {
-                showSlide($(this).data("index"));
-            });
-
-            function startAutoplay() {
-                stopAutoplay();
-                timer = setInterval(nextSlide, DELAY);
-            }
-
-            function stopAutoplay() {
-                clearInterval(timer);
-            }
-
-            $carousel.on("mouseenter", stopAutoplay)
-                .on("mouseleave", startAutoplay);
-            startAutoplay();
-
-            $(document).on("keydown", function (event) {
-                if (event.key === "ArrowRight") {
-                    nextSlide();
-                } else if (event.key === "ArrowLeft") {
-                    prevSlide();
-                }
-            });
-        });
-    </script>
 
     <footer class="footer">
         <div class="footer-content">
