@@ -3,15 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
+    <title>Gallery | Kai's Portfolio</title>
     <link rel="stylesheet" href="menu.css">
 </head>
-
-<style>
-  h1{
-    color:crimson
-  }
-</style>
 <body>
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
         <ul class="nav-list">
@@ -22,139 +16,138 @@
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
     </nav>
-<center>
-<h1>ᴍʏ ᴘʜᴏᴛᴏ ɢᴀʟʟᴇʀʏ</h1>
-</center>
-<div class="carousel" id="carousel">
-  <div class="slides">
-    <figure class="slide">
 
-      <img src="me.jpg" alt="Describe image 1">
-      <figcaption>Me</figcaption>
-    </figure>
+    <main>
+        <h1 class="gallery-heading">My Photo Gallery</h1>
 
-    <figure class="slide">
-      <img src="job.jpg" alt="Describe image 2">
-      <figcaption>Future Job (Me Fr)</figcaption>
-    </figure>
+        <div class="carousel" id="carousel">
+            <div class="slides">
+                <figure class="slide">
+                    <img src="images/me.jpg" alt="Photo of Kai">
+                    <figcaption>Me</figcaption>
+                </figure>
 
-    <figure class="slide">
-      <img src="art.jpg" alt="Describe image 2">
-      <figcaption>Hobbies (Art)</figcaption>
-    </figure>
+                <figure class="slide">
+                    <img src="images/job.jpg" alt="Future career inspiration photo">
+                    <figcaption>Future Job (Me Fr)</figcaption>
+                </figure>
 
-    <figure class="slide">
-     <img src="hobby2.jpg" alt="Describe image 2">
-     <figcaption>Hobbies(Gaming)</figcaption>
-    </figure>
+                <figure class="slide">
+                    <img src="images/art.jpg" alt="Artwork and illustration hobby highlight">
+                    <figcaption>Hobbies (Art)</figcaption>
+                </figure>
 
-    <figure class="slide">
-      <img src="friend.jpg" alt="Describe image 3">
-      <figcaption>My Friends</figcaption>
+                <figure class="slide">
+                    <img src="images/hobby2.jpg" alt="Gaming hobby highlight">
+                    <figcaption>Hobbies (Gaming)</figcaption>
+                </figure>
 
-    </figure>
-    <figure class="slide">
-      <img src="friend2.jpg" alt="Describe image 4">
-      <figcaption>My Friends</figcaption>
-    </figure>
-    <button class="nav prev" type="button" aria-label="Previous
-slide">&#10094;</button>
+                <figure class="slide">
+                    <img src="images/friend.jpg" alt="Photo with friends">
+                    <figcaption>My Friends</figcaption>
+                </figure>
 
+                <figure class="slide">
+                    <img src="images/friend2.jpg" alt="Another photo with friends">
+                    <figcaption>My Friends</figcaption>
+                </figure>
 
-    <button class="nav next" type="button" aria-label="Next slide">&#10095;</button>
-  </div>
-  <div class="dots"></div>
-</div>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script>
-  $(document).ready(function () {
-    // 1. Cache elements and settings
-    const $carousel = $("#carousel");
-    const $slides = $carousel.find(".slide");
-    const $dotsBox = $carousel.find(".dots");
-    const total = $slides.length;
-    const FADE_TIME = 500; // milliseconds
-    const DELAY = 4000; // time between automatic slides
-    let current = 0; // index of the visible slide
-    let timer = null; // holds the autoplay timer
-    // 2. Initial state: show only the first slide
-    $slides.hide().eq(0).show();
-    // 3. Create one dot per slide
-    $slides.each(function (i) {
-      $("<button>")
-        .attr({ type: "button", "aria-label": "Go to slide " + (i + 1) })
-        .addClass("dot" + (i === 0 ? " active" : ""))
-        .data("index", i)
-        .appendTo($dotsBox);
-    });
-    const $dots = $dotsBox.find(".dot");
-    // 4. Show a specific slide
-    function showSlide(index) {
-      if (index === current) return; // nothing to do
-      $slides.eq(current).stop(true, true).fadeOut(FADE_TIME);
-      $slides.eq(index).stop(true, true).fadeIn(FADE_TIME);
-      $dots.removeClass("active").eq(index).addClass("active");
-      current = index;
-    }
-    function nextSlide() { showSlide((current + 1) % total); }
-    function prevSlide() { showSlide((current - 1 + total) % total); }
-    // 5. Controls
-    $carousel.on("click", ".next", nextSlide);
-    $carousel.on("click", ".prev", prevSlide);
-    $dotsBox.on("click", ".dot", function () {
-      showSlide($(this).data("index"));
-    });
-    // 6. Autoplay (pauses on hover)
-    function startAutoplay() {
-      stopAutoplay(); // avoid duplicate timers
-      timer = setInterval(nextSlide, DELAY);
-    }
-    function stopAutoplay() {
-      clearInterval(timer);
-    }
-    $carousel.on("mouseenter", stopAutoplay)
-      .on("mouseleave", startAutoplay);
-    startAutoplay();
-    // 7. Keyboard control
-    $(document).on("keydown", function (event) {
-      if (event.key === "ArrowRight") {
-        nextSlide();
-      } else if (event.key === "ArrowLeft") {
-        prevSlide();
-      }
-    });
-  });
-</script>
+                <button class="nav prev" type="button" aria-label="Previous slide">&#10094;</button>
+                <button class="nav next" type="button" aria-label="Next slide">&#10095;</button>
+            </div>
+            <div class="dots"></div>
+        </div>
+    </main>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const $carousel = $("#carousel");
+            const $slides = $carousel.find(".slide");
+            const $dotsBox = $carousel.find(".dots");
+            const total = $slides.length;
+            const FADE_TIME = 500;
+            const DELAY = 4000;
+            let current = 0;
+            let timer = null;
 
-      </main>
+            $slides.hide().eq(0).show();
+
+            $slides.each(function (i) {
+                $("<button>")
+                    .attr({ type: "button", "aria-label": "Go to slide " + (i + 1) })
+                    .addClass("dot" + (i === 0 ? " active" : ""))
+                    .data("index", i)
+                    .appendTo($dotsBox);
+            });
+
+            const $dots = $dotsBox.find(".dot");
+
+            function showSlide(index) {
+                if (index === current) return;
+                $slides.eq(current).stop(true, true).fadeOut(FADE_TIME);
+                $slides.eq(index).stop(true, true).fadeIn(FADE_TIME);
+                $dots.removeClass("active").eq(index).addClass("active");
+                current = index;
+            }
+
+            function nextSlide() { showSlide((current + 1) % total); }
+            function prevSlide() { showSlide((current - 1 + total) % total); }
+
+            $carousel.on("click", ".next", nextSlide);
+            $carousel.on("click", ".prev", prevSlide);
+            $dotsBox.on("click", ".dot", function () {
+                showSlide($(this).data("index"));
+            });
+
+            function startAutoplay() {
+                stopAutoplay();
+                timer = setInterval(nextSlide, DELAY);
+            }
+
+            function stopAutoplay() {
+                clearInterval(timer);
+            }
+
+            $carousel.on("mouseenter", stopAutoplay)
+                .on("mouseleave", startAutoplay);
+            startAutoplay();
+
+            $(document).on("keydown", function (event) {
+                if (event.key === "ArrowRight") {
+                    nextSlide();
+                } else if (event.key === "ArrowLeft") {
+                    prevSlide();
+                }
+            });
+        });
+    </script>
+
     <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-text">
-          <h3>Stay Connected!</h3>
-          <p>
-                           <center>﹒⌗﹒₊‧ ⏔⏔⏔ ꒰ ᧔ෆ᧓ ꒱ ⏔⏔⏔ ﹒౨ৎ˚</center>
-            ۪𓈒 ຼ ͜𓐇˚ִִ𓈒꒱꒱ "Thank you for visiting my Website ^^. Connect with me on my socials 
-            or reach out to me via Discord or Email for collaborations and inquiries. Your
-            support and feedback are greatly and utmost appreciated ^^ ." ۪𓈒 ຼ ͜𓐇˚ִִ𓈒꒱꒱
-                          <center>﹒౨ৎ˚₊‧  ⏔⏔⏔ ꒰ ᧔ෆ᧓ ꒱ ⏔⏔⏔ ﹒⌗﹒₊‧</center>
-          </p>
+        <div class="footer-content">
+            <div class="footer-text">
+                <h3>Stay Connected!</h3>
+                <p class="kaomoji" aria-hidden="true">﹒⌗﹒₊‧ ⏔⏔⏔ ꒰ ᧔ෆ᧓ ꒱ ⏔⏔⏔ ﹒౨ৎ˚</p>
+                <p>
+                    "Thank you for visiting my website! Connect with me on my socials or reach out via Discord or Email for collaborations and inquiries. Your support and feedback are greatly appreciated."
+                </p>
+                <p class="kaomoji" aria-hidden="true">﹒౨ৎ˚₊‧ ⏔⏔⏔ ꒰ ᧔ෆ᧓ ꒱ ⏔⏔⏔ ﹒⌗﹒₊‧</p>
+            </div>
+
+            <div class="footer-social">
+                <h3>Follow Me</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/ChronicRonan" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a>
+                    <a href="https://discord.com/users/1136677336461348915" target="_blank" rel="noopener noreferrer" aria-label="Discord">𖦹</a>
+                    <a href="https://www.instagram.com/sunhasrisenforhim/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+                </div>
+            </div>
         </div>
 
-        <div class="footer-social">
-          <h3>Follow Me</h3>
-          <div class="social-links">
-            <a href="https://www.facebook.com/ChronicRonan">f</a>
-            <a href="https://discord.com/users/1136677336461348915">𖦹</a>
-            <a href="https://www.instagram.com/sunhasrisenforhim/">Insta</a>
-          </div>
+        <div class="footer-bottom">
+            <p>©2026 All rights Reserved | Designed by : Kai</p>
         </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>©2026 All rights Reserved | Designed by : Kai</p>
+    </footer>
 
 </body>
-</html>
-
 </html>
