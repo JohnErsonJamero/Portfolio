@@ -19,7 +19,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: url("images/banner.jpg") center / cover no-repeat;
+    background: url("banner.jpg") center / cover no-repeat;
     opacity: 0.22;
     z-index: 0;
     pointer-events: none;
@@ -27,7 +27,7 @@ body::before {
 
 /* Different background image only on index.html */
 body.home-page::before {
-    background-image: url("images/home-bg.jpg");
+    background-image: url("home-bg.jpg");
 }
 
 .navbar,
